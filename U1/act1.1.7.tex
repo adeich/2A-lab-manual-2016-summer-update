@@ -1,0 +1,77 @@
+\section[Energy in Chemical Reactions]{Applying the \EnergyInteractionModel{} to Chemical Reactions}
+\label{act1.1.7}
+
+\begin{overview}
+
+\noindent
+{\bfseries Overview:} Now that we've used the \EnergyInteractionModel{} to understand a few physical phenomena, we'll apply it to understand a class of phenomena that you might already be familiar with from chemistry: Chemical reactions.
+
+\end{overview}
+
+\note{Purpose}{
+	Students think about what bond energy means in the context of chemical reactions, instead of phase changes.
+}
+
+\begin{fnt}
+	\input{U1/fnt1.1.4-1}
+\end{fnt}
+
+\noindent The chemical reaction that occurs when you mix together powdered Plaster of Paris and water resulting in a paste that can be used for molds and casts as it solidifies is given by:			
+\begin{center}
+	\ce{(Ca2SO4)2 * \ce{\ce{\ce{H2O}}} + 3\ce{\ce{\ce{H2O}}} -> 2 (Ca2SO4 * 2\ce{\ce{\ce{H2O}}}) + $Q$_{to~env.}}
+\end{center}
+Represent this process in an \EnergyDiagram{} by modeling {\em all} of the reactants and products {\em together} as having a {\em single} bond energy system and a single {\em thermal} energy system. \textbf{Assume the initial and final temperatures are the same} and that heat ($Q$) has been transferred to the environment during the process, which is obvious if you have ever mixed Plaster of Paris. This should make answering the question asked in \hyperref[fnt1.1.4-1]{the FNT} (``Did the bond energy increase, decrease, or stay the same?'') very straightforward.
+
+\note{}{
+	Since heat was produced, the total bond energy must have decreased.
+}
+
+\WCD 
+
+\begin{fnt}
+	\input{U1/fnt1.1.4-2}
+\end{fnt}
+
+\noindent
+We'll now use the \EnergyInteractionModel{} to get a close approximation of the heat of combustion of a mole of propane in a chemical reaction. This is an example of how our general approach to energy conservation using the \textbf{\EnergyInteractionModel{}} encompasses topics that traditionally seem to be something entirely different; e.g., the heat of combustion of various chemical substances.
+
+\begin{enumerate}
+	\item Discuss briefly in your group your responses to question (a) regarding what you can say with certainty about changes in bond energy. Come to a consensus and \textbf{put your response on the board}.
+	
+	\note{}{
+		When a compound breaks up into constituent atoms, its bond energy increases. 
+	
+		When a compound is formed, its bond energy decreases.
+	}
+	
+	\item Share your responses to part (b) in your group and put an \EnergyDiagram{} up on the board as directed in part (b) of \hyperref[fnt1.1.4-1]{the FNT}. Make sure everyone in your group understands why the values of the indicators are the way they are. Make sure the difference in the values of the indicators between reactants and products makes sense to everyone in your group and why the changes are in the direction shown on your diagram.
+	
+	\note{}{
+		There should be four bond energy systems:
+			\begin{itemize}
+				\item \ce{C3H8} bond energy increases as bonds break.
+				\item \ce{O2} bond energy increases as bonds break.
+				\item \ce{CO2} bond energy decreases as bonds form. 
+				\item \ce{\ce{\ce{\ce{H2O}}}} bond energy decreases as bonds form.
+			\end{itemize}
+	}
+	
+	\item Write your equation expressing energy conservation with the appropriate numerical values to show how to find $Q$.
+	
+	\note{}{
+		\begin{align*}
+		\Delta E_{\text{bond} (\ce{C3H8})} + \Delta E_{\text{bond} (\ce{O2})} + \Delta E_{\text{bond} (\ce{CO2})} +\Delta E_{\text{bond} (\ce{\ce{\ce{\ce{H2O}}}})} \&= Q\\
+		\unitfrac[4002]{kJ}{mol} + 5(\unitfrac[495]{kJ}{mol}) - 3(\unitfrac[1607]{kJ}{mol}) - 4(\unitfrac[92]{kJ}{mol}) \&= -\unit[2044]{kJ}
+		\end{align*}
+	}
+\end{enumerate}
+
+\note{Note for Instructor}{
+	In their introductory chemistry course students will have been introduced to various ``Heats'' expressed as $\Delta H$'s:  Heat of formation, heat of fusion, heat of vaporization, etc. In this FNT, values of the various $\Delta E_\text{bond}$'s were calculated by looking up in a chemistry text the heats of formation of the different molecules. The algebraic signs can be confusing, but thinking about it in terms of how a particular $\Delta E$ changes, you canr $KE$ep it straight. The other confusing thing about using heats of formation, is that the ``zero'' is typically taken to be the state of the element at STP. So, for example, the heat of formation of \ce{O2} is typically listed as zero, but the atomic \ce{O} does have a listed value. Also note that all values of heats of formation, other heats, and heat capacities are listed in chemistry books or tables typically shown as $\Delta H$'s. This is because enthalpy, $H$, is the appropriate energy to use when processes are carried out at constant pressure. This all becomes clear at the end of the quarter when we do some simple thermodynamics.
+	\todo[inline]{The last sentence of this paragraph is false and may require updating.}
+}
+
+\WCD  
+\note{}{
+	Aside from summing up and clarifying, a point that is good for you to emphasize is that this is what they were doing in their chemistry class with heats of formation. This is all the same science!  Whether we call it chemistry or physics, it is the same fundamental thing!  Many students really think that physics energy is somehow different from chemistry energy.
+}

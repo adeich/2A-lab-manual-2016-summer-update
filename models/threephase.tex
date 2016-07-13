@@ -1,0 +1,140 @@
+\appendixchapter{\ThreePhaseModel{}}
+
+\subsection*{Graphical Representation}
+
+\begin{center}
+\begin{tikzpicture}
+	% title the diagram
+	 \draw (7.5,7) node[align=center] {\textbf{\TempGraph{}}};
+
+    % draw horizontal axis
+    \draw[-{Stealth[scale=1.2]}, line width=1pt] (0,0) -- (14.5,0);
+    % label the horizontal axis
+    \draw (7.5,0) node[below=3pt] {Energy Added or Removed $\Delta E$ (at constant pressure)};
+
+    % draw vertical axis
+     \draw[-{Stealth[scale=1.2]}, line width=1pt] (0,0) -- (0,7);
+    % label the vertical axis
+     \draw (0,7.2) node[left=10pt, rotate=90] {Temperature $T$};
+    % add melting point and boiling point on axis
+     \draw[line width=1pt] (-3pt,1.8 cm) -- (3pt,1.8 cm) node[left=3pt] {\scriptsize{$T_\text{MP}$}};
+     \draw[line width=1pt] (-3pt,3.8 cm) -- (3pt,3.8 cm) node[left=3pt] {\scriptsize{$T_\text{BP}$}};
+
+	% draw first segment
+	 \draw[line width=.8pt,dashed] (0,0) -- (1.5,1.8) node[below left=10pt, rotate=50.19442891] {\tiny{solid phase}};
+	 
+	% draw second segment
+	 \draw[line width=.8pt,dashed] (1.5,1.8) -- (6,1.8) node[below left] {\tiny{mixed phase: solid/liquid}};
+	 
+	% draw third segment
+	 \draw[line width=.8pt,dashed] (6,1.8) -- (8,3.8) node[below left=10pt, rotate=45] {\tiny{liquid phase}};
+
+	% draw fourth segment
+	 \draw[line width=.8pt,dashed] (8,3.8) -- (11.5,3.8) node[below left] {\tiny{mixed phase: liquid/gas}};
+
+	% draw fifth segment
+	 \draw[line width=.8pt,dashed] (11.5,3.8) -- (14,6.5) node[below left=10pt, rotate=47.20259816] {\tiny{gas phase}};
+	 
+	% draw labels
+	 \draw[{Stealth[scale=1]}-] (1.5,1.8) -- (1,2.8) node[above,align=center] {\tiny{All solid at $T_\text{MP}$}};
+	 \draw[{Stealth[scale=1]}-] (6,1.8) -- (5.5,2.8) node[above,align=center] {\tiny{All liquid at $T_\text{MP}$}};
+	 \draw[{Stealth[scale=1]}-] (8,3.8) -- (7.5,4.8) node[above,align=center] {\tiny{All liquid at $T_\text{BP}$}};
+	 \draw[{Stealth[scale=1]}-] (11.5,3.8) -- (11,4.8) node[above,align=center] {\tiny{All gas at $T_\text{BP}$}};
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Algebraic Representations}
+
+\noindent Change in temperature $\Delta T$ of an amount $m$ of a substance with specific heat $C_p$ when energy is \emph{added} or \emph{removed} as \emph{heat} $Q$:
+\begin{align*}
+	\Delta T = \frac{Q}{C_p \cdot m}
+\end{align*}
+
+\noindent Amount $\Delta m$ of a substance with heat of melting/vaporization/sublimation $\Delta H$ that changes phase when energy is \emph{added} or \emph{removed} as \emph{heat} $Q$:
+\begin{align*}
+	\left|\Delta m\right| = \frac{Q}{H_p}
+\end{align*}
+
+
+\pagebreak
+
+
+\newcommand{\leftcolumn}{0.35\linewidth}
+\newcommand{\rightcolumn}{0.65\linewidth}
+
+\noindent
+\parbox[b]{\leftcolumn}{
+	\textbf{Constructs}}
+\parbox[b]{\rightcolumn}{
+	\textbf{Relationships}}
+
+\noindent
+\hrulefill
+
+\noindent
+\begin{minipage}[c]{\leftcolumn}
+	\baselineskip=1.5\baselineskip
+	Pure Substances\\
+	Three \emph{Phases}: \emph{solid}, \emph{liquid}, \emph{gas}\\
+	Temperature\\
+	Energy \emph{transferred} as\\
+	\hspace*{5mm}\emph{Heat} or \emph{Work}
+\end{minipage}
+\begin{minipage}[c]{\rightcolumn}
+	\begin{enumerate}
+		\item {\em Pure substances} exist in one of three phases, depending on the \emph{temperature} and \emph{pressure}: solid, liquid, and gas. {\em Non}-pure substances, e.g., solutions and composites, require more complex models for analysis.
+		\item To change either the \emph{temperature} or the \emph{phase} of a substance, \emph{energy} must be \emph{added} or \emph{removed}. Often, this energy is \emph{transferred} to or from the substance as \emph{heat} $Q$ but can also be transferred as \emph{work} $W$.\\[0.2mm]
+	\end{enumerate}
+\end{minipage}
+
+\noindent
+\begin{minipage}[c]{\leftcolumn}
+	\baselineskip=1.5\baselineskip
+	Phase Change Temperatures:\\
+	\hspace*{5mm}$T_\text{MP}$, $T_\text{BP}$, $T_\text{SP}$\\
+	\emph{Melting}, \emph{Boiling}, \emph{Sublimation}
+\end{minipage}
+\begin{minipage}[c]{\rightcolumn}
+\begin{enumerate}\setcounter{enumi}{2}
+	\item At constant pressure, changes of {\em phase} (solid~$\Leftrightarrow$~liquid and liquid~$\Leftrightarrow$~gas, or at some values of pressure, solid~$\Leftrightarrow$~gas) occur at specific temperatures: the \emph{phase change temperatures} $T_\text{MP}$, $T_\text{BP}$, and $T_\text{SP}$. They have particular values for each pure substance. The values of these temperatures are the same when ``going through'' the respective phase change in ``both directions.'' However, phase change temperatures are \emph{dependent on the pressure}.\\[0.2mm]
+	\end{enumerate}
+\end{minipage}
+
+\noindent
+\begin{minipage}[c]{\leftcolumn}
+	\baselineskip=1.2\baselineskip
+	Heat of \emph{Melting}\\
+	Heat of \emph{Vaporization} (Boiling)\\
+	Heat of \emph{Sublimation}\\[0.1mm]
+\end{minipage}
+\begin{minipage}[c]{\rightcolumn}
+	\begin{enumerate}
+		\item[] The amount of \emph{energy added} or \emph{removed} during a particular \emph{phase change} (written as $\Delta H$, indicating constant pressure) is unique to each substance and has been measured and tabulated for most substances.\\[0.2mm]
+	\end{enumerate}
+\end{minipage}
+
+\noindent
+\begin{minipage}[c]{\leftcolumn}
+	\baselineskip=1.5\baselineskip
+	Thermal Equilibrium\\
+	Mixed phase
+\end{minipage}
+\begin{minipage}[c]{\rightcolumn}
+	\begin{enumerate}
+		\item[] If the substance is in \emph{thermal equilibrium} (i.e., if the entire substance is at the same temperature) at the \emph{phase change temperature}, both phases will \emph{remain} at the phase change temperature as the phase change occurs. \emph{Mixed phases} can exist in thermal equilibrium {\em only} when the temperature has the value of the phase-change temperature.\\[0.2mm]
+	\end{enumerate}
+\end{minipage}
+
+\noindent
+\begin{minipage}[c]{\leftcolumn}
+	\baselineskip=1.5\baselineskip
+	Heat Capacity\\
+	Specific Heat
+\end{minipage}
+\begin{minipage}[c]{\rightcolumn}
+	\begin{enumerate}\setcounter{enumi}{3}
+		\item Changes of {\em temperature} of a substance occur when energy is added or removed while the substance is \emph{not} at a phase-change temperature.
+
+		When the energy added is in the form of heat, the change in temperature $\Delta T$ is related to the amount of energy added by a property of the substance called \emph{heat capacity} $C$. The \emph{specific heat} $C_p$ (heat capacity per unit mass) has a particular value for each substance. This value has been measured and tabulated for most substances (see Table \ref{HeatCapTab} in Appendix \ref{UnitsConv}).
+	\end{enumerate}
+\end{minipage}

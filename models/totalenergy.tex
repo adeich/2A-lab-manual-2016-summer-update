@@ -1,0 +1,47 @@
+\appendixchapter{Energy in Mechanical Systems}
+
+\subsection*{Graphical Representation: The \emph{Point-to-Point Diagram}}
+
+\textbf{Example:} A mass hanging on a spring. The total energy of the system consists of translational kinetic energy and spring-mass potential energy.
+
+\begin{center}
+\begin{tikzpicture}[thick,scale=0.8, every node/.style={transform shape}]
+    % draw horizontal axis
+    \draw[-{Stealth[scale=1.2]}, line width=1pt] (-5,0) -- (5,0);
+    % label the horizontal axis
+    \draw (0,0) node[below=3pt] {Displacement $x$ from Equilibrium};
+    \draw (-4.5,0) node[below=3pt] {\scriptsize{$-x$}};
+    \draw (4.5,0) node[below=3pt] {\scriptsize{$+x$}};
+
+    % draw vertical axis
+     \draw[-{Stealth[scale=1.2]}, line width=1pt] (0,0) -- (0,7);
+    % label the vertical axis
+     \draw (0,6.9) node[left=9pt, rotate=90] {Energy $E$};
+
+    % draw Total Energy line
+    \draw [ForestGreen,line width=1pt] (-5,4.5) -- (5,4.5);
+    \draw (-3.6,4.8) node[ForestGreen] {$E_\text{total} = KE_\text{translational} + PE_\text{spring-mass}$};
+    
+    % draw Potential Energy line
+     \draw[scale=1.12,domain=-4:4,smooth,variable=\x,blue, line width=1pt] plot ({\x},{1/2*1/2*\x*\x});
+     \draw (5.5, 4) node[blue] {$PE_\text{spring-mass}$};
+     
+    % draw Kinetic Energy line
+     \draw[scale=1.12,domain=-4:4,smooth,variable=\x,red, line width=1pt] plot ({\x},{4-(1/2*1/2*\x*\x)});
+     \draw (5.6, .5) node[red] {$KE_\text{translational}$};
+\end{tikzpicture}
+\end{center}
+
+{\scriptsize{\noindent While the horizontal axis in the diagram shows (in this example) the displacement $x$ from the equilibrium position of the spring-mass system, each point along the horizontal axis also represents a certain point in time. If you add up the values of $PE_\text{spring-mass}$ and $KE_\text{translational}$ at this particular point in time, you get the total energy $E_\text{total}$ for this particular point in time. In a \textbf{closed physical system} (no work done on or by the system), the total energy $E_\text{total}$ is \emph{always conserved}, which means it \emph{does not change over time}.}
+
+\subsection*{Algebraic Representations}
+
+\begin{align*}
+	\text{Total Energy of the System:} && E_\text{total} &= \sum E_i = E_1 + E_2 + E_3 + \ldots \\[6mm]
+	\text{Gravitational Potential Energy:} && PE_\text{gravitational} &= m g y\\[3mm]
+	\text{Elastic Potential Energy:} && PE_\text{elastic} &= \frac{1}{2} k x^2\\[2mm]
+	\text{Spring-Mass Potential Energy:} && PE_\text{spring-mass} &= \frac{1}{2} k x^2\\[2mm]
+	\text{Translational Kinetic Energy:} && KE_\text{translational} &= \frac{1}{2} m v^2 \\[2mm]
+	\text{Rotational Kinetic Energy:} && KE_\text{rotational} &= \frac{1}{2} I \omega^2
+\end{align*}
+}

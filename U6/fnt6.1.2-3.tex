@@ -1,0 +1,37 @@
+\label{fnt6.1.2-3}
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+	\vspace{-20pt}
+	\begin{center}
+	\begin{tikzpicture}[thick,scale=0.65, every node/.style={transform shape},background rectangle/.style={fill=white}, show background rectangle]
+		% draw a 10x7.5 grid in light gray with 5mm grid spacing
+		\draw[step=.5cm,gray,very thin] (0,0) grid (10,7.5);
+		% draw a darker grid in light gray with 2.5mm grid spacing
+		\draw[step=2.5cm,gray,thick] (0,0) grid (10,7.5);
+    
+		% draw the first arrow; "Stealth" is the name of the arrowhead, and it's capitalized, so that it's scalable
+		\draw[-{Stealth[scale=1.2]}, line width=1.5pt] (0.5,7) -- (2.5,5);
+		% draw label A on top of the first vector
+		\draw (2.5,5) node[above=12pt,align=center] {$\vec{A}$};
+    
+		% draw the second arrow, with descriptor B
+		\draw[-{Stealth[scale=1.2]}, line width=1.5pt] (8.5,7) -- (8.5,3) node[right=3pt]{$\vec{B}$};
+    
+		% draw the second arrow, with descriptor C
+		\draw[-{Stealth[scale=1.2]}, line width=1.5pt] (7.5,1) -- (2,1) node[above=3pt]{$\vec{C}$};
+
+	\end{tikzpicture}
+	\end{center}
+	\vspace{-10pt}
+\end{wrapfigure}
+
+\noindent Using a piece of graph paper, carry out the operations listed below on the vectors shown at right. Label all vectors.
+
+\begin{enumerate}[(a)]
+	\item $\vec{A}$ + $\vec{B}$
+	\item $\vec{B}$ + $\vec{A}$
+	\item $\vec{A}$ - $\vec{B}$
+	\item $\vec{A}$ + $\vec{B}$ + $\vec{C}$
+	\item $\vec{B}$ - $\vec{A}$
+	\item -$\vec{C}$
+\end{enumerate}

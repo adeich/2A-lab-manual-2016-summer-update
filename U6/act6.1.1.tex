@@ -1,0 +1,122 @@
+\section{Adding and Subtracting Vectors}
+\label{act6.1.1}
+
+\begin{overview}
+
+\textbf{Overview:} After studying the energy dynamics of mechanical systems, we're now moving on to take a look at some of the underlying mechanisms and some of the effects of energy transfers and transformations: \textbf{\emph{forces and motion}}. Since we will spend some time and effort on quantitatively describing both, we need to get familiar with mathematical entities that will make this quantitative treatment possible: \textbf{\emph{vectors}}.
+
+\end{overview}
+
+\subsection{Vectors}
+
+Often, a physical quantity cannot be fully described without giving both a magnitude and a direction for it. For instance, consider two physical quantities, mass and force. Suppose I have an object with a mass of \unit[5.0]{kg} and another with a mass of \unit[1.5]{kg}. What is the range of possible values for the total mass of these two objects (i.e. how big might the total mass be and how small might it be)?
+
+Now suppose I push on some object with a force of \unit[2.5]{N} and you push on it with a force of \unit[1.5]{N}. What is the range of values for the total force on the object?  Explain. (\textbf{Hint:} the forces might be in the same directions or in opposite directions.)
+
+\WCD
+
+\subsection{Vector Addition}
+
+\begin{enumerate}
+	\item
+	  % We have to create a parbox here because wrapfigure does not support enumerate environments directly
+	  \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+      \vspace{-3.9mm}
+      \begin{wrapfigure}[6]{r}{1.5cm}
+        \centering
+        \vspace{-\baselineskip}
+			\begin{tikzpicture}{r}{1cm}
+			% draw the first arrow; "Stealth" is the name of the arrowhead, and it's capitalized, so that it's scalable
+			\draw[-{Stealth[scale=1]}, line width=0.8pt] (0,0) -- (0,2.25) node[midway, left=3pt]{$\vec{F}_1$};
+			% draw the second arrow
+			\draw[-{Stealth[scale=1]}, line width=0.8pt] (0.6,0.5) -- (0.6,2) node[midway, right=3pt]{$\vec{F}_2$};
+			\end{tikzpicture}
+	  \end{wrapfigure}
+      The picture to the right shows two force vectors. $\vec{F}_1$ represents a force of \unit[2.5]{N} pushing straight up the page and $\vec{F}_2$ a force of \unit[1.5]{N} pushing straight up the page. Decide in your groups what the magnitude and direction of the total force acting on an object would be if both $\vec{F}_1$ and $\vec{F}_2$ were acting on it at the same time. Then decide how you should arrange the two vectors that are shown to represent the addition of these vectors showing how you get the total vector that you expect.
+      }
+	
+	\textbf{Hint:} You can easily move the vectors around so that either:
+	\vspace{-6pt}
+	\begin{enumerate}[(i)]
+		\item their tails touch, 
+		\item their heads touch, or 
+		\item the tail of one touches the head of the other.
+	\end{enumerate}
+	
+	Which of these three methods best demonstrates addition of these two vectors to find the proper total vector?  Sketch this method on the board and also sketch the total force (also called the ``net force'' or the ``sum of the forces'', $\vec{F}_\text{net} = \sum \vec{F}$).
+		
+	\item 
+	  % We have to create a parbox here because wrapfigure does not support enumerate environments directly
+	  \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+      \vspace{-2.9mm}
+      \begin{wrapfigure}[6]{r}{5cm}
+        \centering
+        \vspace{-\baselineskip}
+			\begin{tikzpicture}{r}{3cm}
+			% draw the first arrow; "Stealth" is the name of the arrowhead, and it's capitalized, so that it's scalable
+			\draw[-{Stealth[scale=1]}, line width=0.8pt] (0,0) -- (0,2.25) node[midway, left=2pt]{$\vec{F}_1$};
+			% draw the second arrow
+			\draw[{Stealth[scale=1]}-, line width=0.8pt] (0.75,0.5) -- (0.75,2) node[midway, right=2pt]{$\vec{F}_2$};
+			% draw the third arrow
+			\draw[-{Stealth[scale=1]}, line width=0.8pt] (1.75,1.25) -- (3.25,1.25) node[midway, above=1pt]{$\vec{F}_3$};
+			\end{tikzpicture}
+	  \end{wrapfigure}
+	The picture to the right shows three force vectors. Show that your method from Part~1 gives a sensible result if $\vec{F}_1$ and $\vec{F}_2$ are the two forces acting on an object. Show that your method works if $\vec{F}_1$ and $\vec{F}_3$ are the two forces acting on an object.
+	}
+\end{enumerate}
+
+\WCD
+
+\subsection{Vector Subtraction}
+
+\begin{enumerate}
+	\item
+		  % We have to create a parbox here because wrapfigure does not support enumerate environments directly
+	  \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+      \vspace{-2.9mm}
+      \begin{wrapfigure}[10]{r}{5cm}
+        \centering
+        \vspace{-\baselineskip}
+			\begin{tikzpicture}{r}{3cm}
+				% draw the vertical axis
+				\draw[-{Stealth[scale=1.2]}, line width=.5pt] (0,-1.5) -- (0,2.5) node[left=2pt]{$y$};
+				% draw the horizontal axis
+				\draw[-{Stealth[scale=1.2]}, line width=.5pt] (-0.5,0) -- (4,0) node[below=2pt]{$x$};
+				
+				% draw points and coordinates
+				\fill (2,-1) circle[radius=2pt] node[right=1pt]{\scriptsize{$(x_i,y_i)$}}; 
+				\fill (3.5,1) circle[radius=2pt] node[right=1pt]{\scriptsize{$(x_f,y_f)$}}; 
+
+				% draw R_i
+				\draw[-{Stealth[scale=1]}, line width=1pt] (0,0) -- (2,-1) node[midway, below=2pt]{$\vec{R}_i$};
+				% draw R_f
+				\draw[-{Stealth[scale=1]}, line width=1pt] (0,0) -- (3.5,1) node[midway, above=2pt]{$\vec{R}_f$};
+				
+				% draw connecting lines
+				\draw[dashed, line width=.1pt] (2,-1) -- (2,0);
+				\draw[dashed, line width=.1pt] (2,0.02) -- (3.5,0.02);
+				\draw[dashed, line width=.1pt] (3.5,0) -- (3.5,1);
+			\end{tikzpicture}
+	  \end{wrapfigure}	
+	An object starts at the initial location ($x_i$, $y_i$) as shown in the $x$-$y$ graph to the right and then follows the dashed line path shown to a final location ($x_f$,$y_f$). The picture also shows the initial and final position vectors (position is always measured with respect to some axis origin so all position vectors are drawn from the origin to the position of the object). Draw this figure on the board. Then decide in your groups what arrow you would draw to represent the change in the position, $\Delta\vec{R}$ (both the distance moved as well as the direction moved) and then draw this vector on the board.
+	
+	}
+	
+	\item Like before, we define the change in a quantity to be the final value minus the initial value: $\Delta\vec{R} = \vec{R}_f - \vec{R}_i$. Decide in your groups whether $\vec{R}_i$ and $\vec{R}_f$ should be arranged tail-to-head, tail-to-tail, etc. to represent the subtraction of these vectors and show how you get the change $\Delta\vec{R}$ that you expected.
+	
+	(\textbf{Hint:} This might be easier thank you think.)
+	
+	\item Does the method used above give you a reasonable $\Delta\vec{v}$ for the two velocity vectors shown below?
+\end{enumerate} 
+
+\begin{center}
+	\begin{tikzpicture}{r}{1cm}
+		% draw the first arrow; "Stealth" is the name of the arrowhead, and it's capitalized, so that it's scalable
+		\draw[-{Stealth[scale=1]}, line width=0.8pt] (0,0) -- (0,2) node[midway, left=3pt]{$\vec{v}_i$};
+		% draw the second arrow
+		\draw[{Stealth[scale=1]}-, line width=0.8pt] (0.6,0) -- (0.6,2) node[midway, right=3pt]{$\vec{v}_f$};
+	\end{tikzpicture}
+\end{center}
+
+\WCD
+ 

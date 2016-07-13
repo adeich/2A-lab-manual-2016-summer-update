@@ -1,0 +1,362 @@
+\documentclass[12pt,onecolumn,letterpaper]{book}
+
+\usepackage[margin=1in]{geometry}	% Set all margins to 1 inch
+
+\usepackage[dvipsnames]{xcolor}		% Even more nice colors!
+\usepackage{
+	color,	% Allows for pretty colors!
+	units,	% Keeping numbers and units together
+	graphicx,	% Allows images
+	epstopdf,
+	grffile,	% Allows image files with periods in filename
+	amsmath,	% Math mode
+	amsbsy,
+%	amssymb,
+	titlesec,	% Chapter title formatting
+	enumerate,	% Allows easy reformatting of enumerates
+	hyperref,	% Clickable links in pdf
+	hypcap,	% Makes hyperref link to start of float, not end
+	fancyhdr,	% Fancy headers & footers
+	etoolbox,	% Boolean toggles for instructor/student version
+	array,	% Neater table formatting
+	multicol,	% Simple multicolumn environment
+	tocloft,	% To put FNTs on ToC
+	multirow,	% Table entries spanning multiple rows
+	supertabular,	% Tables spanning multiple pages (for Davis #ing)
+	textcomp,	% Allows for use of \textdegree to draw correct ºC units
+	tikz,		% Allows for simple drawings (e.g., timelines)
+	wrapfig,	% Allows for figure wrapping
+	subcaption,	% Allows subfigures and captions
+	}
+\usepackage[framemethod=TikZ]{mdframed}	% Draw boxes around FNTs,
+									% Teacher Notes, Answers,
+									% and Background Readings
+\usepackage[version=4]{mhchem}			% Typesetting for Chemistry stuffs
+\usepackage[twoside]{rotating}				% Rotated tables in Appendix
+
+\usetikzlibrary{arrows.meta,calc,decorations.markings,math,arrows.meta,backgrounds,positioning} % Allows for some more formatting in tikz pictures
+
+\newtoggle{instructor}
+%	\toggletrue{instructor}
+	\togglefalse{instructor}
+
+\newtoggle{print}	% If True, hides color in hyperlinks and boxes
+%	\toggletrue{print}
+	\togglefalse{print}
+
+\iftoggle{instructor}
+	{\usepackage[backgroundcolor=green]{todonotes}}	% Activity Book
+	{\usepackage[disable]{todonotes}}	% Hide ToDo's in Student Version
+
+
+% Hide/Unhide hyperlink color in print version
+\iftoggle{print}
+	{\hypersetup{hidelinks=true}}
+	{\hypersetup{colorlinks=true, linkcolor=blue}}
+\iftoggle{print}
+	{\graphicspath{{U1/figs/grayscale/}
+				   {U2/figs/grayscale/}
+				   {U6/figs/grayscale/}
+				   {U7/figs/grayscale/}
+				   {U8/figs/grayscale/}
+				   {models/figs/grayscale/}
+				  }}
+	{\graphicspath{{U1/figs/}
+				   {U1/figs/grayscale/}
+				   {U2/figs/}
+				   {U2/figs/grayscale/}
+				   {U6/figs/}
+				   {U6/figs/grayscale/}
+				   {U7/figs/}
+				   {U7/figs/grayscale/}
+				   {U8/figs/}
+				   {U8/figs/grayscale/}
+				   {models/figs/}
+				   {models/figs/grayscale/}
+				  }}
+				  
+% Convert tigz figures into grayscale in print version
+\iftoggle{print}
+	{\definecolor{red}{gray}{0.2}
+		\definecolor{green}{gray}{0.4}
+		\definecolor{blue}{gray}{0.4}
+		\definecolor{yellow}{gray}{0.7}
+		\definecolor{violet}{gray}{0.3}
+		\definecolor{orange}{gray}{0.5}
+		\definecolor{ForestGreen}{gray}{0.5}
+		}
+
+% Recasting the names of some section-y bits
+\renewcommand{\partname}{Unit}			% Label parts as Unit
+\renewcommand{\chaptername}{DL}			% Label chapters as DL in ToC
+\newcommand{\chapterlongname}{Discussion/Lab~}	% Chapter label in Body
+
+
+% Creating bolded list headers
+\newcommand\bitem[1]{\item{\bfseries #1}}
+% Environment for bold list headers
+\newenvironment{benumerate}
+	{\begin{enumerate}[\bfseries 1.]}
+	{\end{enumerate}}
+
+
+% Adjust Section numbering
+\renewcommand*\thesection{\thechapter\,\Alph{section}}
+
+
+% Chapter Title formatting
+\titleformat{\chapter}[display]
+	{\normalfont\centering\huge\bfseries}
+	{\Large\bfseries\centering}
+	{-4pt}
+	{\rule{5cm}{0.4pt}\\}
+	[\vspace{-13pt}\rule{5cm}{0.4pt}\\]
+\titlespacing{\chapter}{0pt}{-16pt}{16pt}
+
+
+
+% pdf bookmark for ToC
+\addtocontents{toc}{\protect{\pdfbookmark[0]{Table of Contents}{toc}}}
+% Numbering depth of ToC
+\iftoggle{instructor}
+	{\setcounter{tocdepth}{3}}	% Set to 3 for Teacher's Edition
+	{\setcounter{tocdepth}{1}}	% Set to 0 or 1 for Student Edition
+% Numbering depth of sections in body of text
+\setcounter{secnumdepth}{3}
+% Remove leading Chapter Numbers from ToC
+\makeatletter
+\let\latexl@chapter\l@chapter
+\def\l@chapter#1#2{\begingroup\let\numberline\@gobble\latexl@chapter{#1}{#2}\endgroup}
+\makeatother
+
+
+
+% Whole Class Discussion macro
+%\todo{I was trying to get this box be in the center of the page, but the "center" shifts around depending on what environment we're in. Not sure how to compensate for that?}
+\newcommand{\WCD}{
+	\vspace{8pt}
+	\noindent
+	\hspace{\linewidth}\hspace{-\textwidth}
+	\hspace{-0.7em}
+	\framebox[1.1\width][c]{\textbf{Whole Class Discussion}}
+	}
+
+% Other useful macros for text the is used over and over
+% End each macro with {} in the text to ensure proper spacing
+\newcommand{\ThreePhaseModel}{\textbf{Three-Phase Model of Matter}}
+\newcommand{\EnergyInteractionModel}{\textbf{Energy-Interaction Model}}
+	\newcommand{\EnergyInteractionModels}{\textbf{Energy-Interaction Models}}
+\newcommand{\pConsModel}{\textbf{Momentum Conservation Model}}
+\newcommand{\TempGraph}{\textit{Temperature vs.\ Energy-Added Diagram}}
+	\newcommand{\TempGraphs}{\textit{Temperature vs.\ Energy-Added Diagrams}}
+\newcommand{\EnergyDiagram}{\textit{Energy-System Diagram}}
+	\newcommand{\EnergyDiagrams}{\textit{Energy System Diagrams}}
+\newcommand{\SOModel}{\textbf{Spring-Mass Model}}
+\newcommand{\pModel}{\textbf{Momentum Conservation Model}}
+\newcommand{\pchart}{\textit{Momentum Chart}}
+	\newcommand{\pcharts}{\textit{Momentum Charts}}
+\newcommand{\FModel}{\textbf{Newtonian Force Model}}
+\newcommand{\forcediag}{\textit{Force Diagram}}
+	\newcommand{\forcediags}{\textit{Force Diagrams}}
+
+
+
+% Instructor Notes environment (framed)
+\newmdenv[
+	linewidth=1pt,
+	roundcorner=0pt,
+	backgroundcolor=\iftoggle{print}{black!10}{blue!5},
+	linecolor=\iftoggle{print}{gray}{blue},
+	frametitle={}, frametitlerule=false,
+	]
+	{notes}
+\newcommand{\note}[2]{
+	\iftoggle{instructor}
+		{\begin{notes}[frametitle={#1}]{#2}\end{notes}}
+%		{\todo[]{}}	% Maybe I can use this instead of the previous line to put the teacher notes in the margins rather than inline
+		{}
+	}
+	
+
+% FNT environment (framed)
+\newcounter{fnt}[chapter]	% FNT counter resets every chapter
+\newlistof{FNTs}{fntlist}{List of FNTs}
+\newmdenv[						
+	linewidth=1.5pt,
+	roundcorner=10pt,
+	backgroundcolor=\iftoggle{print}{black!7}{yellow!5},
+	frametitle={\thefnt},
+	frametitlerule=false,
+	]
+	{fntbox}
+\newenvironment{fnt}
+	{\begin{fntbox}
+		\refstepcounter{fnt}	% Increment FNT counter
+		\addcontentsline{toc}{subsection}{\thefnt}	% Append to ToC
+		\addcontentsline{fntlist}{section}{\thefnt}	% Append to FNTlist
+	}
+	{\end{fntbox}}
+% Macro for current FNT
+\renewcommand{\thefnt}{FNT~\thechapter-\arabic{fnt}}
+% Macro to add chapters to FNT list
+\newcommand{\addchapter}{
+	\addcontentsline{fntlist}{chapter}{%
+		Complete before \chaptername\thechapter}
+	}
+
+
+
+	
+% Boxed Answers environment
+\newmdenv[						
+	linewidth=1.5pt,
+	roundcorner=10pt,
+	backgroundcolor=white,
+	frametitle={Possible Answers},
+	frametitlerule=false,
+	]
+	{ans}
+
+
+
+	
+% Background Reading environment
+\newmdenv[						
+	linewidth=1.5pt,
+	roundcorner=10pt,
+	backgroundcolor=\iftoggle{print}{black!3}{orange!5},
+	frametitle={Please read before moving on:},
+	frametitlerule=false,
+	]
+	{reading}
+
+
+% Generic framed section-beginning/overview environment, same style as "Reading"
+\newmdenv[						
+	linewidth=1.5pt,
+	roundcorner=10pt,
+	innertopmargin=15pt,
+	innerbottommargin=15pt,
+	innerleftmargin=15pt,
+	innerrightmargin=15pt,
+	backgroundcolor=\iftoggle{print}{black!3}{green!5},
+	frametitlerule=false,
+	]
+	{overview}
+
+
+
+% Macro for nice looking tilde in text mode
+\newcommand{\about}{{\raise.17ex\hbox{$\scriptstyle\sim$}}}
+
+
+
+\title{{\bf Physics 2A Lab Manual}
+\iftoggle{instructor}
+	{\\ {\Large Instructor Edition}}
+	{\\ {\Large Student Edition}}
+}
+\author{San Jos\'{e} State University}
+\date{Spring 2016}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%		FRONT MATTER
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frontmatter
+
+\maketitle
+\thispagestyle{empty}\setcounter{page}{0}
+\begingroup
+	\hypersetup{linkcolor=black}		% Make ToC links black
+	\tableofcontents
+	\listofFNTs
+%	\listoftodos	% This keeps crashing the compiler so I commented it out for the time being
+\endgroup
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%		BODY
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter
+
+\pagestyle{fancy}
+	\fancyhf{}
+	\fancyhead[LE,RO]{\chaptername\thechapter}		% Print DLM# on outside edge of page
+	\fancyhead[RE,LO]{\sc Activity~\nouppercase{\rightmark}}	% Print Section on inside edge of page
+	\renewcommand{\footrulewidth}{0.4pt}	% Draw line btwn body & footer
+	\cfoot{\thepage}		% Centered page number in footer
+
+
+
+\input{Unit0}
+			
+
+\part[\ThreePhaseModel{} \& \EnergyInteractionModel{}]{The \ThreePhaseModel{}\\ and\\ The \EnergyInteractionModel{}}
+\label{Unit1}
+
+	\input{Unit1}
+	
+\part{Mechanical Energy Systems}
+\label{Unit2}
+	
+	\input{Unit2}
+	
+\part[Forces and Motion: Momentum Conservation]{Forces and Motion:\\The \pModel{}}
+\label{Unit6}
+	
+	\input{Unit6}
+	
+%\part{Momentum Conservation}
+	\input{Unit7}
+	\label{Unit7}
+
+\part[Forces and Motion: Newton's Laws]{Forces and Motion:\\ The \FModel{}}
+	\input{Unit8}
+	\label{Unit8}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%		APPENDICES
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage		% Start Appendix on right hand side of page
+\appendix
+%\cfoot{\thechapter-\thepage}
+
+\pagenumbering{gobble}	% No page numbers
+\part*{Appendix}
+\addcontentsline{toc}{part}{Appendix}
+
+\fancyhead[LE,RO]{\sc\nouppercase{\leftmark}}
+\fancyhead[RE,LO]{\sc\nouppercase{\rightmark}}
+
+\numberwithin{page}{chapter}	% resets page number every chapter
+\renewcommand{\thepage}{\thechapter-\arabic{page}}
+\newcommand{\appendixchapter}[1]{\chapter{#1}\setcounter{page}{1}}
+%\pagenumbering{arabic}	% reset page numbering
+%\renewcommand{\thepage}{Appendix \arabic{page}}
+
+\input{UnitsHandouts}
+\input{models/threephase}
+\input{models/energyinteraction}
+\input{models/totalenergy}
+\input{models/linearmomentum}
+\input{models/newtonianforce}
+
+\iftoggle{instructor}{
+	\input{DavisNumbering}
+	\input{ActivityBook}
+	}
+	{}
+
+\end{document}

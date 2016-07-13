@@ -1,0 +1,36 @@
+\label{fnt6.1.2-5}
+
+%\missingfigure{Needs a grid showing F1 and F2.}
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+	\vspace{-32pt}
+	\begin{center}
+	\begin{tikzpicture}[thick,scale=0.65, every node/.style={transform shape},background rectangle/.style={fill=white}, show background rectangle]
+		% draw a 10x7.5 grid in light gray with 5mm grid spacing
+		\draw[step=.5cm,gray,very thin] (0,0) grid (10,7.5);
+		% draw a darker grid in light gray with 2.5mm grid spacing
+		\draw[step=2.5cm,gray,thick] (0,0) grid (10,7.5);
+    
+		% draw object node
+		\draw (8.5,2.5) node[circle,minimum size=12pt,fill,inner sep=1pt]{} node[below=3pt]{object};
+    
+		% draw the first arrow, with descriptor F1; "Stealth" is the name of the arrowhead, and it's capitalized, so that it's scalable
+		\draw[-{Stealth[scale=1.2]}, line width=1.5pt] (8.5,2.5) -- (6.5,4.5) node[above=6pt,align=center] {$\vec{F}_\text{1 on object}$};
+    
+		% draw the second arrow, with descriptor B
+		\draw[-{Stealth[scale=1.2]}, line width=1.5pt] (8.5,2.5) -- (1.5,2.5) node[above=6pt]{$\vec{F}_\text{2 on object}$};
+		
+		% label "no net force" and forces to find
+		\draw (2,5) node[above=3pt, align=left]{$\Sigma \vec{F} = 0$
+								\\$\vec{F}_\text{3 on object}=?$
+								\\$\vec{F}_\text{4 on object}=?$};
+	\end{tikzpicture}
+	\end{center}
+	\vspace{-12pt}
+\end{wrapfigure}
+
+\noindent Vectors $\vec{F}_\text{1 on object}$, $\vec{F}_\text{2 on object}$, $\vec{F}_\text{3 on object}$, and $\vec{F}_\text{4 on object}$ are all exerted on an object, adding together to form a net force vector $\Sigma \vec{F} = 0$, as shown to the right.
+
+However, only vectors $\vec{F}_\text{1 on object}$, $\vec{F}_\text{2 on object}$, and  $\Sigma \vec{F}$ (which is zero) are known. It is known that $\vec{F}_\text{3 on object}$ is completely vertical, and $\vec{F}_\text{4 on object}$ is completely horizontal.\\
+
+\noindent On a separate piece of graph paper, use the properties of vector addition to determine the magnitudes of the vertical vector $\vec{F}_\text{3 on object}$, and the horizontal vector $\vec{F}_\text{4 on object}$.

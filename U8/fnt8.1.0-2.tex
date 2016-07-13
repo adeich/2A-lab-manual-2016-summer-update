@@ -1,0 +1,44 @@
+\label{fnt8.1.0-2}
+
+We've already investigated this problem with one spring scale in \ref{8.1.0-1}. Now, imagine you have two spring scales, A and B, connected at the end of the scale that doesn't move. The end that moves of each spring scale (where you take readings from) is attached to a string that goes over a pulley and connects to a \unit[1]{kg} mass for both spring scales A and B.
+
+\vspace{-6pt}
+\begin{center}
+	\begin{tikzpicture}[thin,scale=.7, every node/.style={transform shape},background rectangle/.style={fill=white}, show background rectangle]
+		%table
+		\draw (2,3) rectangle (10,3.5);
+		\draw (3,0) rectangle (3.25,3);
+		\draw (8.75,0) rectangle (9,3);
+		%pulleys
+		\draw (1.5,3.62) circle (.3);
+		\draw (10.5,3.62) circle (.3);
+		\filldraw[fill=white,draw=black] (1.5,3.5) rectangle (2.5,3.7);
+		\filldraw[fill=white,draw=black] (9.5,3.5) rectangle (10.5,3.7);
+		%weights
+		\draw (.8,1.5) rectangle (1.6,2) node[midway] {\unit[1]{kg}};
+		\draw (10.4,1.5) rectangle (11.2,2) node[midway] {\unit[1]{kg}};
+		%string
+		\draw (1.2,2) -- (1.2,3.62);
+		\draw (10.8,2) -- (10.8,3.62);
+		\draw (1.5,3.92) -- (4.5,3.92);
+		\draw (10.5,3.92) -- (7.7,3.92);
+		%spring scales
+		\draw (4.9,3.72) rectangle (5.9,4.12) node[midway,above=6pt,align=center] {\scriptsize{Spring}\\[-1.2ex]\scriptsize{Scale A}};
+		\foreach \x in {5.1, 5.3, 5.5, 5.7}
+			\draw (\x,3.8) -- (\x,4.04);
+		\draw (6,3.92) circle (.1);
+		\draw (4.7,3.92) ellipse (.2 and .1);
+		\draw (6.3,3.72) rectangle (7.3,4.12) node[midway,above=6pt,align=center] {\scriptsize{Spring}\\[-1.2ex]\scriptsize{Scale B}};
+		\foreach \x in {6.5, 6.7, 6.9, 7.1}
+			\draw (\x,3.8) -- (\x,4.04);
+		\draw (6.2,3.92) circle (.1);
+		\draw (7.5,3.92) ellipse (.2 and .1);
+	\end{tikzpicture}
+\end{center}
+\vspace{-24pt}
+
+\begin{enumerate}[(a)]
+	\item State what you think \emph{each} spring scale will read in this situation.
+	
+	\item Construct a logical argument that explains why the spring scales read what you reported in Question~(a). You should treat this as a quiz/test question and therefore use complete sentences, reference any models you think will strengthen your argument, and provide evidence to support your claim.
+\end{enumerate}

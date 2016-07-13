@@ -1,0 +1,49 @@
+\label{fnt7.2.1-9}
+
+Throw an object (like a ball) horizontally and observe its motion. You are now going to analyze this motion using conservation of momentum. We assume there is no air friction on the ball. Consider the motion of the ball just after it has left your hand moving in a horizontal direction.
+
+\begin{enumerate}[(a)]
+	\item Draw a force diagram for the ball. What direction is the net force?
+	
+	\item Complete the first two rows in the \pchart{} below. The $\vec{p}_i$ of each successive step will be the $\vec{p}_f$ from the previous step. What is the direction of $\Delta \vec{p}~$?
+	\vspace{-8pt}
+	\begin{center}
+		\begin{tikzpicture}[thin,scale=0.9, every node/.style={transform shape},background rectangle/.style={fill=white}, show background rectangle]
+			% draw table
+			\draw (0,0) -- (0,3);
+			\draw[very thick] (2,0) -- (2,3);
+			\draw (4,0) -- (4,3);
+			\draw (6,0) -- (6,3);
+			\draw (8,0) -- (8,3);
+			\draw[dashed] (0,0) -- (8,0);
+			\draw[very thick] (0,1) -- (8,1);
+			\draw[very thick] (0,2) -- (8,2);
+			\draw (0,3) -- (8,3);
+			
+			% label table
+			\node[text width=2cm, align=center] at (1,2.5)
+				{Open $\vec{p}$ system};
+			\node[text width=2cm, align=center] at (3,2.5)
+				{$\vec{p}_i$};
+			\node[text width=2cm, align=center] at (5,2.5)
+				{$\Delta\vec{p}$};
+			\node[text width=2cm, align=center] at (7,2.5)
+				{$\vec{p}_f$};
+			\node[text width=2cm, align=center] at (1,1.5)
+				{Ball $\Delta t_1$};
+			\node[text width=2cm, align=center] at (1,0.5)
+				{Ball $\Delta t_2$};
+				
+			% arrows
+			\draw[-Stealth] (2.5,1.5) -- (3.5,1.5);
+			\draw[-Stealth] (6.5,1.75) -- (7.5,1.25);
+			\draw[-Stealth] (2.5,0.75) -- (3.5,0.25);
+		\end{tikzpicture}
+	\end{center}
+	\vspace{-12pt}
+	\item Add three more rows to the \pchart{} (just show the three vectors $\vec{p}_i$, $\Delta \vec{p}$, and $\vec{p}_f$). Assume the same time interval for each change such that $\Delta \vec{p}$ will be \nicefrac{1}{5} the length of the initial momentum, $\vec{p}_i$.
+	
+	\item Why does $\Delta \vec{p}$ stay constant for each step?
+	
+	\item After you have carefully constructed a series of final momenta, use them and what you know about the relationship of the direction of momentum to the path of an object to construct a sketch of the path of the ball.
+\end{enumerate}

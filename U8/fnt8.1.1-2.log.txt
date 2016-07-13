@@ -1,0 +1,38 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.8)  20 APR 2016 16:54
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**fnt8.1.1-2.tex
+(./fnt8.1.1-2.tex
+LaTeX2e <2016/03/31>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+
+./fnt8.1.1-2.tex:3: LaTeX Error: Environment wrapfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \begin{wrapfigure}
+                      {R}{0.25\textwidth}
+? 
+./fnt8.1.1-2.tex:3: Emergency stop.
+ ...                                              
+                                                  
+l.3 \begin{wrapfigure}
+                      {R}{0.25\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+ 
+Here is how much of TeX's memory you used:
+ 7 strings out of 493027
+ 290 string characters out of 6134070
+ 53546 words of memory out of 5000000
+ 3648 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 5i,0n,4p,65b,16s stack positions out of 5000i,500n,10000p,200000b,80000s
+./fnt8.1.1-2.tex:3:  ==> Fatal error occurred, no output PDF file produced!

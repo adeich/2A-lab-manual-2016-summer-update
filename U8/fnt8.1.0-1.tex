@@ -1,0 +1,34 @@
+\label{8.1.0-1}
+
+\textbf{A puzzle to think about:} Two weights of mass \unit[1]{kg} hang from strings which go over pulleys (see illustration below). The strings are attached to the two ends of a spring scale which reads the force. Does the scale read \unit[0]{N}, \unit[9.8]{N}, or \unit[19.6]{N}? Why?\\
+
+\vspace{-10pt}
+\begin{center}
+	\begin{tikzpicture}[thin,scale=1, every node/.style={transform shape},background rectangle/.style={fill=white}, show background rectangle]
+		%table
+		\draw (2,3) rectangle (10,3.5);
+		\draw (3,0) rectangle (3.25,3);
+		\draw (8.75,0) rectangle (9,3);
+		%pulleys
+		\draw (1.5,3.62) circle (.3);
+		\draw (10.5,3.62) circle (.3);
+		\filldraw[fill=white,draw=black] (1.5,3.5) rectangle (2.5,3.7);
+		\filldraw[fill=white,draw=black] (9.5,3.5) rectangle (10.5,3.7);
+		%weights
+		\draw (.8,1.5) rectangle (1.6,2) node[midway] {\unit[1]{kg}};
+		\draw (10.4,1.5) rectangle (11.2,2) node[midway] {\unit[1]{kg}};
+		%string
+		\draw (1.2,2) -- (1.2,3.62);
+		\draw (10.8,2) -- (10.8,3.62);
+		\draw (1.5,3.92) -- (5.3,3.92);
+		\draw (10.5,3.92) -- (6.9,3.92);
+		%spring scale
+		\draw (5.5,3.72) rectangle (6.5,4.12) node[midway,above=6pt] {\scriptsize{Spring Scale}};
+		\foreach \x in {5.7, 5.9, 6.1, 6.3}
+			\draw (\x,3.8) -- (\x,4.04);
+		\draw (5.4,3.92) circle (.1);
+		\draw (6.7,3.92) ellipse (.2 and .1);
+	\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Hint:} Draw a \forcediag{} for the scale in this situation and then draw a \forcediag{} for the scale when it is being used to weigh a hanging object with mass \unit[1]{kg}.

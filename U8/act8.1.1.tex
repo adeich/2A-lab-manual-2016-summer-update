@@ -1,0 +1,130 @@
+\section{Newton's Laws and Momentum Conservation}
+\label{act8.1.1}
+
+\begin{overview}
+
+	\textbf{Overview:} Over the past few weeks, we've dealt a lot with forces, and we know much more about motion in general. We even know that forces cause changes in motion. Sir Isaac Newton, a physicist of the 17th/18th century, formulated three famous laws that powerfully express the relationship between forces and motion. In this next section, we'll discuss these so-called \emph{Newton's Laws}.
+
+\end{overview}
+
+\subsection{Getting started with Newton's Laws}
+
+\begin{fnt}
+	\input{U8/fnt8.1.0-1}
+\end{fnt}
+
+\WCD
+
+\newpage
+
+\subsection{Newton's Laws and the \pConsModel{}}
+
+\begin{reading}
+\textbf{\textit{Newton's Three Laws of Motion}}
+
+\begin{enumerate}[I.]
+	\item Without a net force, there can be no change in the velocity of an object:\footnote{This can be expressed as ``An object in motion remains in motion in a straight line forever unless acted on by an external force;'' and ``An object at rest remains at rest forever unless acted on by an external force.''}
+	
+	\begin{center}\framebox[1.1\width][c]{If $\sum\vec{F}=0$, then $\Delta\vec{v}=0$.}\end{center}
+	
+	\item An object will be accelerated if there is a net force acting upon it:
+	
+	\begin{center}\framebox[1.1\width][c]{$\sum\vec{F}=m\vec{a}$}\end{center}
+
+	\item If object $A$ exerts a force on object $B$, object $B$ \emph{simultaneously} exerts an equal and opposite force on object $A$:\footnote{You may have heard of this as ``For every action, there is an equal and opposite reaction.''}
+	
+	\begin{center}\framebox[1.1\width][c]{$\vec{F}_\text{A on B} = -\vec{F}_\text{B on A}$}\end{center}
+	
+\end{enumerate}
+
+\end{reading}
+
+\begin{enumerate}
+	\item Come up with a physical scenario that illustrates each of Newton's three laws. Describe each law in both sentence form and with a concise mathematical expression, specific to your example. Be careful and precise with notation in the algebraic expressions.
+	
+	\item 
+	  % We have to create a parbox here because wrapfigure does not support enumerate environments directly
+	  \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+      \vspace{-3mm}
+      \begin{wrapfigure}[6]{r}{5cm}
+        \centering
+        \vspace{-\baselineskip}
+			\begin{tikzpicture}[scale=.8, every node/.style={transform shape}]{r}{1}
+				\draw[blue] (0,0) ellipse (0.75cm and 0.33cm);
+				\draw[blue] (3,1.5) ellipse (0.75cm and 0.33cm);
+				\draw[blue,dashed] (1,0) .. controls (2.25,0.25) .. (2.75,1) node[midway, right=4pt, blue] {3rd law};
+			\end{tikzpicture}
+	  \end{wrapfigure}
+      Make a \forcediag{} for each object in each of the following situations. For each situation, circle and connect the forces that are in tandem as third law pairs, as shown.
+      }
+	
+	\begin{enumerate}
+		\item Refer to the %rocket example of \ref{fnt7.1.1-2}.
+		astronaut example from \ref{14C.1}. 
+		Recreate a \pchart{} and follow the instructions for the force diagram above. Explain how each of Newton's Laws can be identified in the \pcharts{} and \forcediags{}. Suppose we wanted the rocket to move at a constant speed, is a net force necessary to make this happen?
+		
+		\item Refer to the boat example of \ref{fnt7.1.1-3}. Recreate a \pchart{} and follow the instructions for the force diagram above. Explain how each of Newton's Laws can be identified in the \pcharts{} and \forcediags{}.
+	\end{enumerate}
+\end{enumerate}
+
+\WCD
+
+\subsection{Use Newton's Three Laws applied to a system of three objects}
+
+\subsubsection*{\emph{Static} Case: All objects sitting still}
+
+\begin{enumerate}
+	\item Refer to the picture below of three books sitting on a table that is standing on a floor. Make a separate \forcediag{} for each of the four objects: Books~A, B, and C, and the table. The masses of the books are \unit[0.8]{kg}, \unit[0.2]{kg}, and \unit[0.5]{kg} for Books~A, B, and C, respectively and the mass of the table is \unit[30]{kg}.
+	
+	\begin{center}
+	\begin{tikzpicture}{c}{1}
+		% Table
+		\draw[double distance = 5pt] (1,0) -- (1,2);
+		\draw[double distance = 5pt] (4,0) -- (4,2);
+		\draw (0.5,2) rectangle (4.5,2.5) node[midway] {table};
+		% Book C
+		\draw (1.75,2.5) rectangle (3.5,3.25) node[midway] {C};
+		% Book B
+		\draw (2,3.25) rectangle (3.25,3.75) node[midway] {B};
+		% Book A
+		\draw (1.25,3.75) rectangle (3.75,4.5) node[midway] {A};
+		% Floor
+		\draw (0,0) -- (5,0);
+		\foreach \x in {0.5,1,1.5,2,2.5,3,3.5,4,4.5,5}
+    			\draw (\x,0) -- (\x-0.25,-0.25);
+	\end{tikzpicture}
+	\end{center}
+	
+	\item Identify all 3rd law pairs of forces appearing in your \forcediags{} by circling the two forces and connecting as shown in the diagram on the previous page.
+	
+	\item Use Newton's 1st and 3rd laws to numerically determine all of the forces acting on the books and the table. If necessary, redraw your \forcediags{} so they are more to scale.
+\end{enumerate}
+
+\subsubsection*{\emph{Dynamic} Cases: Objects moving horizontally and vertically}
+
+\begin{enumerate}
+	  \setcounter{enumi}{3}
+	\item If the books and table together are sliding across the room each at the same constant speed, how would your \forcediags{} change? Show precisely how it would change or explain why it would not.
+	
+	\item Now imagine the table is sitting in an elevator that begins to accelerate upward with an acceleration equal to $\unitfrac[2]{m}{s^2}$.
+	\begin{enumerate}
+		\item Make a new \forcediag{} for each book and determine the forces acting on it.
+		\item Create a \pchart{} for at least two of the objects.
+		\item Do any of the objects experience a net force? If so, give the magnitude and direction of each.
+		\item Is it correct to say a force always equals $m\vec{a}$~?
+	\end{enumerate}
+\end{enumerate}
+
+\WCD
+
+\subsection{Applications of Newton's Laws}
+
+\begin{fnt}
+	\input{U8/fnt8.1.1-2}
+\end{fnt}
+
+\vspace{-6pt}
+\WCD
+\vspace{12pt}
+
+\input{U8/fnts2}

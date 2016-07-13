@@ -1,0 +1,146 @@
+\appendixchapter{\pModel{}}
+
+\subsection*{Graphical Representation: The \pchart{}}
+%\vspace{-1cm}
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\caption*{\textbf{Closed System}\\Typically used for collisions/interactions involving two or more objects.}
+		\begin{tikzpicture}[thin,scale=0.9, every node/.style={transform shape},background rectangle/.style={fill=white}, show background rectangle]
+			% draw table
+			\draw (0,0) -- (0,4);
+			\draw[very thick] (2,0) -- (2,4);
+			\draw (4,0) -- (4,4);
+			\draw (6,0) -- (6,4);
+			\draw (8,0) -- (8,4);
+			\draw (0,0) -- (8,0);
+			\draw[very thick] (0,1) -- (8,1);
+			\draw (0,2) -- (8,2);
+			\draw[very thick] (0,3) -- (8,3);
+			\draw (0,4) -- (8,4);
+			
+			% label table
+			\node[text width=2cm, align=center] at (1,3.5)
+				{Closed $\vec{p}$ system};
+			\node[text width=2cm, align=center] at (3,3.5)
+				{$\vec{p}_i$};
+			\node[text width=2cm, align=center] at (5,3.5)
+				{$\Delta\vec{p}$};
+			\node[text width=2cm, align=center] at (7,3.5)
+				{$\vec{p}_f$};
+			\node[text width=2cm, align=center] at (1,2.5)
+				{Object 1};
+			\node[text width=2cm, align=center] at (1,1.5)
+				{Object 2};
+			\node[text width=2cm, align=center] at (1,0.5)
+				{Total System};
+			\node[text width=2cm, align=center] at (5,0.5)
+				{0};
+		\end{tikzpicture}
+		\caption*{For total system: $\Delta \vec{p} = 0$\\
+	For each object: $\vec{p}_i + \Delta \vec{p} = \vec{p}_f$}
+	\end{subfigure}
+	\hspace{0.05\textwidth}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\caption*{\textbf{Open System}\\Typically used when the phenomenon involves a net impulse acting on the system.}
+		\begin{tikzpicture}[thin,scale=0.9, every node/.style={transform shape},background rectangle/.style={fill=white}, show background rectangle]
+			\draw[white] (0,0) -- (8,0);
+			% draw table
+			\draw (0,2) -- (0,4);
+			\draw[very thick] (2,2) -- (2,4);
+			\draw (4,2) -- (4,4);
+			\draw (6,2) -- (6,4);
+			\draw (8,2) -- (8,4);
+			\draw (0,2) -- (8,2);
+			\draw[very thick] (0,3) -- (8,3);
+			\draw (0,4) -- (8,4);
+			
+			% label table
+			\node[text width=2cm, align=center] at (1,3.5)
+				{Open $\vec{p}$ system};
+			\node[text width=2cm, align=center] at (3,3.5)
+				{$\vec{p}_i$};
+			\node[text width=2cm, align=center] at (5,3.5)
+				{$\Delta\vec{p}$};
+			\node[text width=2cm, align=center] at (7,3.5)
+				{$\vec{p}_f$};
+			\node[text width=2cm, align=center] at (1,2.5)
+				{Total System};
+		\end{tikzpicture}
+		\caption*{For total system: $\Delta \vec{p} = \Sigma\vec{I}$\\
+	\phantom{For total system: } $\vec{p}_i + \Delta\vec{p} = \vec{p}_f$}
+	\end{subfigure}
+	\caption*{To identify any forces that cause the object's change in momentum (change in motion), it helps to draw a force diagram for each object in the \pchart{}.}
+\end{figure}
+%\vspace{-2cm}
+
+\subsection*{Algebraic Representations}
+
+\begin{align*}
+	\text{Definition of Momentum }\vec{p}\text{:} && \vec{p} &= m \cdot \vec{v}\\[5mm]
+	\text{Net Impulse:} && \sum\vec{I} &= \sum\vec{F}_\text{avg. ext.} \cdot \Delta t\\[5mm]
+	\text{Conservation of Momentum:} && \sum\vec{I} &= \sum\vec{F}_\text{avg. ext.} \cdot \Delta t = \vec{p}_f - \vec{p}_i = \Delta \vec{p}_\text{system} = 0\\[5mm]
+	\text{Momentum of a Particle System:} && \vec{p}_\text{system} &= \sum_j\vec{p}_j
+\end{align*}
+
+\pagebreak
+
+\renewcommand{\leftcolumn}{0.375\linewidth}
+\renewcommand{\rightcolumn}{0.625\linewidth}
+
+\noindent
+\parbox[b]{\leftcolumn}{
+	\textbf{Constructs}}
+\parbox[b]{\rightcolumn}{
+	\textbf{Relationships}}
+
+\vspace*{-\parskip}
+\noindent
+\hrulefill
+
+\vspace*{-\parskip}
+\noindent
+\parbox[c]{\leftcolumn}{
+	\noindent
+	Momentum ($\vec{p}$)\\
+
+	\noindent
+	Position ($\vec{r}$), Displacement ($\Delta\vec{r}$), and Velocity ($\vec{v}$) Vectors\\
+
+	\noindent
+	Net Impulse ($\sum\vec{I}$)
+		\\\hspace*{1em}$\bullet$ by the net force
+		\\\hspace*{1em}$\bullet$ by a single force\\
+	
+	\vspace{1.5cm}
+	\noindent
+	Conservation of Momentum\\
+	
+	\vspace{2cm}		
+	\noindent
+	Momentum of a System of\\ Particles\\
+	
+	\noindent
+	Collisions
+		\\\hspace*{1em}$\bullet$ Energy Conservation
+		\\\hspace*{1em}$\bullet$ Momentum Conservation\\
+	}
+\parbox[c]{\rightcolumn}{
+	\begin{enumerate}
+		\item \emph{Momentum} is a property of a moving object. Its quantity is defined as the product of the object's mass and velocity
+		
+		\item The \emph{total} or \emph{net impulse} acting on an object is defined as the net force on the object times the amount of time during which the net force is acting on the object.
+		
+		\item The \emph{change in momentum} is equal to the net impulse and is independent of the coordinate system used to express $\vec{F}$, $\sum\vec{I}$, and $\vec{p}$.
+		
+		\item \emph{Conservation of Momentum:} If the net external impulse acting on a physical system is zero, then there is no change in the total linear momentum of that system; otherwise, the change in momentum is equal to the net external impulse.
+		
+		\item The momentum of a system of particles is the vector sum of the individual momenta.
+		
+		\item In a collision, the momentum of the system of objects (particles) remains constant if the external impulses are negligible. This is true whether energy is conserved during the collision or not.
+	\end{enumerate}
+}
+
+\null

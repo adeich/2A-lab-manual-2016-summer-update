@@ -1,0 +1,40 @@
+\label{fnt6.1.2-6}
+
+%\missingfigure{Needs xy-axes showing F1 and F2}
+
+\begin{wrapfigure}{R}{0.25\textwidth}
+	\vspace{-39.5pt}
+  	\centering
+	\begin{center}
+	\begin{tikzpicture}[thick,scale=0.65, every node/.style={transform shape},background rectangle/.style={fill=white}, show background rectangle]
+		% draw xy-axes
+		\draw[-{Stealth[scale=1.2]}, line width=0.5pt] (0,-0.5) -- (0,5) node[left=6pt,align=center] {$y$};
+		\draw[-{Stealth[scale=1.2]}, line width=0.5pt] (-0.5,0) -- (3,0) node[below=6pt,align=center] {$x$};
+		
+		% draw F1
+		\draw[-{Stealth[scale=1.2]}, line width=1.5pt] (0,0) -- (1.15,0.67) node[above=3pt,align=center] {$\vec{F}_1$};
+		% Label F1 = 5N
+		\node[label={[rotate=30]above:\unit[5]{N}}] at (0.577,0.333) {};
+		% draw F1 arc
+		\draw[line width=0.5] (0.6,0) arc (0:30:0.6);
+		% label F1 arc 30deg
+		\node[label={above:30\textdegree}] at (1.25,-0.25) {};
+		
+		% draw F2
+		\draw[-{Stealth[scale=1.2]}, line width=1.5pt] (0,0) -- (0,4) node[right=6pt,align=center] {$\vec{F}_2$};
+		% label F2
+		\node[label={[rotate=90]left:\unit[15]{N}}] at (-0.125,2.5) {};
+		
+		% draw and label v_i
+		\draw[->] (1.5,3) -- (2.5,3);
+		\node[label={center:$\vec{v}_i=\unitfrac[3]{m}{s}$}] at (2,2.5) {};
+	\end{tikzpicture}
+	\end{center}
+\end{wrapfigure}
+
+\noindent Two force vectors ($\vec{F}_1$ and $\vec{F}_2$, as shown to the right) act on a \unit[2]{kg} object that has an initial velocity $\vec{v}_i$ of \unitfrac[3]{m}{s} in the $+x$-direction.
+
+\begin{enumerate}[(a)]
+	\item Use trigonometry to find the $x$- and $y$-components of the net force.
+	\item Find the magnitude and direction of the net force.
+\end{enumerate}
