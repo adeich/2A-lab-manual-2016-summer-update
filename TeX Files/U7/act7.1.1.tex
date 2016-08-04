@@ -96,13 +96,27 @@ A change in momentum of an object is caused by a net force acting on the object 
 \end{overview}
 
 \noindent\textbf{All \pcharts{} are to be filled in with \emph{scaled} arrows representing momentum vectors.}\footnote{The algebraic expression for a momentum vector is  $\vec{p} = m\vec{v}$, where $\vec{v}$ is the velocity vector. This means that velocity and momentum point in the same direction at any instance in time!}
+\vspace{-6pt}
 
 \begin{figure}[h!]
 	\centering
 	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
 		\caption*{\textbf{Closed System}\\Typically used for collisions/interactions involving two or more objects:}
-		\begin{tikzpicture}[thin,scale=0.9, every node/.style={transform shape},background rectangle/.style={fill=white}, show background rectangle]
+\vspace{-6pt}
+		\begin{tikzpicture}[thin,scale=0.85, every node/.style={transform shape},background rectangle/.style={fill=white}, show background rectangle]
+
+			    % draw timeline   
+			    \draw[->] (1,4.75) -- (7,4.75);
+
+			    % draw vertical lines
+			    \foreach \x in {1.5,6.5}
+			      \draw (\x cm,4.75cm+2pt) -- (\x cm,4.75cm-2pt);
+
+			    % draw nodes
+			    \draw (1.5,4.75) node[below=1pt] {\scriptsize initial conditions} node[above=1pt] {\scriptsize\emph{beginning}};
+			    \draw (6.5,4.75) node[below=1pt] {\scriptsize final conditions} node[above=1pt] {\scriptsize\emph{end}};
+
 			% draw table
 			\draw (0,0) -- (0,4);
 			\draw[very thick] (2,0) -- (2,4);
@@ -137,11 +151,25 @@ A change in momentum of an object is caused by a net force acting on the object 
 	For each object: $\vec{p}_i + \Delta \vec{p} = \vec{p}_f$}
 	\end{subfigure}
 	\hspace{0.05\textwidth}
+\vspace{-6pt}
 	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
 		\caption*{\textbf{Open System}\\Typically used when the phenomenon involves a \textbf{net impulse} acting on the system:}
-		\begin{tikzpicture}[thin,scale=0.9, every node/.style={transform shape},background rectangle/.style={fill=white}, show background rectangle]
+		\vspace{-6pt}
+		\begin{tikzpicture}[thin,scale=0.85, every node/.style={transform shape},background rectangle/.style={fill=white}, show background rectangle]
 			\draw[white] (0,0) -- (8,0);
+
+			    % draw timeline   
+			    \draw[->] (1,4.75) -- (7,4.75);
+
+			    % draw vertical lines
+			    \foreach \x in {1.5,6.5}
+			      \draw (\x cm,4.75cm+2pt) -- (\x cm,4.75cm-2pt);
+
+			    % draw nodes
+			    \draw (1.5,4.75) node[below=1pt] {\scriptsize initial conditions} node[above=1pt] {\scriptsize\emph{beginning}};
+			    \draw (6.5,4.75) node[below=1pt] {\scriptsize final conditions} node[above=1pt] {\scriptsize\emph{end}};
+
 			% draw table
 			\draw (0,2) -- (0,4);
 			\draw[very thick] (2,2) -- (2,4);
@@ -167,9 +195,10 @@ A change in momentum of an object is caused by a net force acting on the object 
 		\caption*{For total system: $\Delta \vec{p} = \Sigma\vec{I}$\\
 	\phantom{For total system: } $\vec{p}_i + \Delta\vec{p} = \vec{p}_f$}
 	\end{subfigure}
+	\vspace{-4pt}
 	\caption*{To identify any forces that cause the object's change in momentum (change in motion), it helps to draw a force diagram for each object in the \pchart{}.}
 \end{figure}
-\vspace{-12pt}
+\vspace{-18pt}
 
 \begin{enumerate}
 	\item On your boards, complete the appropriate \pchart{} for each of your examples from Activity~\ref{act7.1.1a}.
@@ -180,6 +209,7 @@ A change in momentum of an object is caused by a net force acting on the object 
 	
 	\item Determine what parts of the \pcharts{} are analogous to \EnergyDiagrams{}. List the analogous parts on the board. In what fundamental way do these diagrams differ?
 \end{enumerate}
+\vspace{-10pt}
 
 \WCD 
 
