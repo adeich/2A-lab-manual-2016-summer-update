@@ -1,3 +1,43 @@
 \label{fnt8.2.1-1}
 
 State whether the acceleration is positive, negative, or zero for each of the position functions $\vec{x}(t)$ in the position versus time graphs below. How do you know?
+
+\begin{center}
+	\begin{tikzpicture}[thick,scale=0.63, every node/.style={transform shape},background rectangle/.style={fill=white}, show background rectangle]
+		%Diagram (a)
+		% draw label
+		\draw (2.5,3.5) node {(a)};
+		% draw xy-axes
+		\draw[-{Stealth[scale=1.2]}, line width=0.5pt] (0,-0.5) -- (0,3) node[left=6pt,align=center] {$x$};
+		\draw[-{Stealth[scale=1.2]}, line width=0.5pt] (-0.5,0) -- (5,0) node[below=6pt,align=center] {$t$};		
+		% draw curve
+		\draw[line width=1.5pt] (0.5,-0.25) -- (4,2.25);
+		
+		%Diagram (b)
+		% draw label
+		\draw (8.5,3.5) node {(b)};
+		% draw xy-axes
+		\draw[-{Stealth[scale=1.2]}, line width=0.5pt] (6,-0.5) -- (6,3) node[left=6pt,align=center] {$x$};
+		\draw[-{Stealth[scale=1.2]}, line width=0.5pt] (5.5,0) -- (11,0) node[below=6pt,align=center] {$t$};		
+		% draw curve
+		\draw[line width=1.5pt,domain=6.5:10,smooth,variable=\x] plot ({\x},{.07*(\x-6)*(\x-6)+.5});
+
+		%Diagram (c)
+		% draw label
+		\draw (14.5,3.5) node {(c)};
+		% draw xy-axes
+		\draw[-{Stealth[scale=1.2]}, line width=0.5pt] (12,-0.5) -- (12,3) node[left=6pt,align=center] {$x$};
+		\draw[-{Stealth[scale=1.2]}, line width=0.5pt] (11.5,0) -- (17,0) node[below=6pt,align=center] {$t$};		
+		% draw curve
+		\draw[line width=1.5pt,domain=12.5:16,smooth,variable=\x] plot ({\x},{-.08*(\x-12)*(\x-12)+2});
+
+		%Diagram (d)
+		% draw label
+		\draw (20.5,3.5) node {(d)};
+		% draw xy-axes
+		\draw[-{Stealth[scale=1.2]}, line width=0.5pt] (18,-0.5) -- (18,3) node[left=6pt,align=center] {$x$};
+		\draw[-{Stealth[scale=1.2]}, line width=0.5pt] (17.5,0) -- (23,0) node[below=6pt,align=center] {$t$};		
+		% draw curve
+		\draw[line width=1.5pt] (17.75,2) -- (22,-.25);
+	\end{tikzpicture}
+\end{center}

@@ -1,10 +1,118 @@
 \label{fnt8.2.1-5}
 
-The velocity graph of a \unit[1]{g} coffee filter released from rest is shown below. Note the break in the time axis. Four distinct intervals are shown on the graph.
+Shown below is the velocity graph of a coffee filter (mass \unit[1]{gramm}) that has been released from rest. Note the break in the time axis. Four distinct intervals are shown on the graph:
 \begin{enumerate}[(a)]
-	\item Speed downward increasing from rest, $\unit[0]{s} \leq t \leq \unit[0.02]{s}$.
-	\item Speed downward increasing, $\unit[0.02]{s} \leq t \leq \unit[0.09]{s}$.
+	\item Speed downward increasing from rest, $\unit[0]{s} \leq t \leq \unit[0.03]{s}$.
+	\item Speed downward increasing, $\unit[0.03]{s} \leq t \leq \unit[0.09]{s}$.
 	\item Speed downward is constant, $\unit[0.09]{s} \leq t \leq \unit[4.99]{s}$.
 	\item Landing on the floor, $\unit[4.99]{s} \leq t \leq \unit[5.00]{s}$.
 \end{enumerate}
-Draw an acceleration graph for the same time intervals above. You may use the tangent lines drawn on the velocity graph to calculate the average slopes of the velocity curve during the first two intervals.
+
+\def\FunctionF(#1){-sqrt((2*.001*9.8)/(1.2*1.225*.13^2*pi))*tanh((#1)*sqrt((1.2*9.8*1.225*.13^2*pi)/(.002)))} % this is the first half of the graph, using a mass of 0.001kg, g=9.8m/s^2, air density 1.225 kg/m^3, coffee filter radius of 13cm, and drag coefficient 1.2
+\def\FunctionFa(#1){-10*(#1)} % tangent for interval (a)
+\def\FunctionFb(#1){-3.3*(#1)-.215} % tangent for interval (b) [experimentally determined]
+\def\FunctionG(#1){-0.5} % tangent for interval (c) and graph for second half of interval (c)
+\def\FunctionH(#1){50*(#1)-250} % plot for interval (d)
+
+\begin{center}
+	\begin{tikzpicture}[background rectangle/.style={fill=white}, show background rectangle]
+	% groupplot environment to allow for side-by-side viewing of two plots
+	\begin{groupplot}[group style={group size=2 by 1},xmin=0,ymin=-.6,height=5.5cm, width=7cm, no markers]
+	\nextgroupplot[
+		axis y line=center,			%not entirely sure what these do what it looks good
+		axis x line=middle,
+		inner axis line style={-},		%no arrows on axes
+		axis on top=true,
+%		xlabel={$t$ [sec]},			%no x-axis label on the first plot (we'll put that on the next one)
+		ylabel={$v~[\unitfrac[]{m}{s}]$},			%y-axis label
+		ylabel near ticks,			%positioning of the label on the left and rotated
+		ylabel style={font=\scriptsize},	%small font
+		ylabel shift=-2mm,			%fixing the distance between the axis label and tick labels
+		xmin=0,					%coordinate ranges for the axes
+		xmax=.16,
+		ymin=-.55,
+		ymax=.1,
+		tick label style={font=\footnotesize},		%making all tick labels small
+		xticklabel style={					%formatting specific for x axis
+			/pgf/number format/precision=2,	%two decimal precision
+			/pgf/number format/fixed,			%no 10^x notation
+			/pgf/number format/fixed zerofill,	%add zeros even if they're not necessary to fill up precision notation
+		},
+		minor x tick num={4},		%add four ticks in between major ticks, so that we have a tick per 0.05 on the x axis
+		ytick distance={.1},			%major ticks 0.1 on the y axis
+		extra y ticks={0}			%add a tick in the origin
+		]
+		\addplot					%draw the first plot
+		[
+			domain=0:.16,			%range 0-0.16
+			samples=50,
+			mark=none,
+			very thick
+		]
+		{\FunctionF(x)};
+
+		\addplot					%draw the first tangent
+		[
+			blue,					%the tangents are blue and dashed here and will be gray for printing, which might reduce visibility...
+			domain=0:.03,
+			samples=50,
+			mark=none,
+			dashed,
+			thick
+		]
+		{\FunctionFa(x)} node[black, above left=3mm,xshift=-2pt]{\scriptsize (a)};	%add the label (a)
+
+		\addplot					%draw the second tangent
+		[
+			blue,
+			domain=.03:.09,
+			samples=50,
+			mark=none,
+			dashed,
+			thick
+		]
+		{\FunctionFb(x)} node[black, above left=7mm,yshift=1mm]{\scriptsize (b)};	%add the label (b)
+
+		\addplot					%draw the third tangent
+		[
+			blue,
+			domain=0.09:.16,
+			samples=50,
+			mark=none,
+			dashed,
+			thick
+		]
+		{\FunctionG(x)} node[black, above left=1mm]{\scriptsize (c)};			%add the label (c)
+		
+	\nextgroupplot[					%we're starting the second plot/second half of the plot
+		axis y line=center,
+		y axis line style={draw opacity=0},	%no y axis, so we'll have to dial the opacity down (couldn't find a better way of doing this without shifting the entire graph around)
+		axis x line=middle,
+		inner axis line style={-},
+		axis on top=true,
+		xlabel={$t~[\unit[]{sec}]$},			%we're adding the x axis label
+		x label style={font=\scriptsize},
+		xmin=4.89,				%new coordinate system dimensions because we've broken the coordinate system up into two horizontal parts
+		xmax=5.0,
+		ymin=-.55,
+		ymax=.1,
+		xticklabel style={			%tick label formatting
+			font=\footnotesize,
+			/pgf/number format/precision=2,
+			/pgf/number format/fixed,
+			/pgf/number format/fixed zerofill,
+		},
+		xtick={4.85,4.9,4.95,5},		%workaround to have 4.89 be the first, minor tick, and 4.90 be the first major tick, with .05 major ticks and 0.01 minor ticks
+		minor x tick num={4},
+		xtick distance={0.05},
+		ytick distance={.1},			%making sure the vertical dimensions are good, but then we're hiding the ticks.
+		ytick=\empty,
+		width=5.5cm				%to roughly make the two graphs proportional
+		]
+		\addplot [domain=4.89:4.99, samples=50, mark=none, very thick] {\FunctionG(x)};	%add second half of interval (c) graph
+		\addplot [domain=4.99:5, samples=50, mark=none, very thick] {\FunctionH(x)} node[black, below, xshift=-4mm, yshift=-5mm] {\scriptsize(d)}; %add interval (d) graph
+	\end{groupplot}
+	\end{tikzpicture}
+\end{center}
+
+\noindent Draw an acceleration graph for the same time intervals above. You may use the tangent lines drawn on the velocity graph to calculate the average slopes of the velocity curve during the first two intervals.

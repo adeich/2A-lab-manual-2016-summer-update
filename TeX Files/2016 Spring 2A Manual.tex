@@ -23,10 +23,11 @@
 	tocloft,	% To put FNTs on ToC
 	multirow,	% Table entries spanning multiple rows
 	supertabular,	% Tables spanning multiple pages (for Davis #ing)
-	textcomp,	% Allows for use of \textdegree to draw correct ÂºC units
+	textcomp,	% Allows for use of \textdegree to draw correct ºC units
 	tikz,		% Allows for simple drawings (e.g., timelines)
 	wrapfig,	% Allows for figure wrapping
 	subcaption,	% Allows subfigures and captions
+	pgfplots,	% fancy plots
 	}
 \usepackage[framemethod=TikZ]{mdframed}	% Draw boxes around FNTs,
 									% Teacher Notes, Answers,
@@ -34,7 +35,7 @@
 \usepackage[version=4]{mhchem}			% Typesetting for Chemistry stuffs
 \usepackage[twoside]{rotating}				% Rotated tables in Appendix
 
-\usetikzlibrary{arrows.meta,calc,decorations.markings,math,arrows.meta,backgrounds,positioning} % Allows for some more formatting in tikz pictures
+\usetikzlibrary{arrows.meta,calc,decorations.markings,math,arrows.meta,backgrounds,positioning,pgfplots.groupplots} % Allows for some more formatting in tikz pictures
 
 \newtoggle{instructor}
 %	\toggletrue{instructor}
@@ -88,7 +89,7 @@
 
 % Recasting the names of some section-y bits
 \renewcommand{\partname}{Unit}			% Label parts as Unit
-\renewcommand{\chaptername}{CH~}			% Label chapters as DL in ToC
+\renewcommand{\chaptername}{Chapter~}	% Label chapters as Chapter in ToC
 \newcommand{\chapterlongname}{Chapter~}	% Chapter label in Body
 
 
@@ -158,7 +159,8 @@
 \newcommand{\FModel}{\textbf{Newtonian Force Model}}
 \newcommand{\forcediag}{\textit{Force Diagram}}
 	\newcommand{\forcediags}{\textit{Force Diagrams}}
-
+\newcommand{\motiongraph}{\textit{Motion Graph}}
+	\newcommand{\motiongraphs}{\textit{Motion Graphs}}
 
 
 % Instructor Notes environment (framed)
