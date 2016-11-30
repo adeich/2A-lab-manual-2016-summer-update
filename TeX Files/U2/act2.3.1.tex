@@ -1,15 +1,19 @@
 \section{Graphically Representing Energy Relationships}
 \label{act2.3.1}
 
-\begin{overview}
 
+
+\begin{overview}
 \textbf{Overview:} By now, you are very familiar with an \emph{algebraic} representation of the \textbf{energy conservation principle}. In this activity, we are restating this algebraic representation and introducing a \emph{graphical} representation of this principle as a useful tool for understanding certain physical phenomena, for example a \textbf{falling ball}.
 
 \end{overview}
 
 \subsection{Rethinking and Restating Energy Conservation}
-
+\label{act2.3.1.1}
 \noindent\textbf{Situation 1:} A dropped ball at any time between when it is dropped from rest to {\em just} before it hits ground.\\
+
+\note{For Activity~\ref{act2.3.1.1}}{Do this derivation as a mini-lecture for the Whole Class. The final result is much more intuitive than the derivation itself, which starts from our standard form of energy conservation:  ∆E1 + ∆E2 = 0.  The idea of the sum of the different energies adding to the total, which is constant, makes sense to these students.  Therefore, it is important not to get bogged down in the derivation.  On the other hand, it is rather important that students see that this isn’t something new—just another way to think about conservation of energy. What should they get? 
+Here is one way of going through this derivation.  $\Delta PE_{g} + \Delta KE =  (PE_{g, f} - PE_{g, i}) + (KE_{f} - KE_{i}) = 0 $    $PE_{g, i} + KE_{i}   =   PE_{g, any time} + KE_{any time}$  or $E_{tot,i} = E_{tot}$, any time from which they conclude $E_{total} =$constant.}
 
 \noindent Our standard expression of energy conservation for this situation is $\Delta PE_\text{gravity} + \Delta KE = 0$. However, there are times when it is more useful to have a different expression of energy conservation (e.g., when graphically representing energy amounts). Your instructor will use the definition of the \emph{difference operator} ``$\Delta$'' to algebraically show how the expression:
 
@@ -23,9 +27,27 @@
 	\Delta PE_\text{gravity} + \Delta KE = 0.
 \end{displaymath}
 	
+
+
+
 \subsection{Using Energy Conservation to Graphically Represent Energy Amounts for the Falling Ball}
-	
+\label{act2.3.1.2}
 In order to plot the different amounts of energy ($PE_\text{gravity}$, $KE$, and $E_\text{total}$) of the dropped ball (Situation~1 above) as a function of height, it is necessary to decide where to set $y = 0$. This means, we need to decide where in space to put the origin of the $y$-coordinate, which measures the height of the ball above the surface of the earth.
+
+
+\note{For Activity~\ref{act2.3.1.2}}{
+What is the best order for plotting?  $PE_{g}$, then $E_{total}$, and finally $KE$.  The reason for this is that you have an equation for the first quantity ($PE_{g} = mgy$).  $E_{total}$ can then be determined using the relation $E_{total} = PE_{g} + KE$ and knowing where $KE = 0$.  $KE$ is plotted last using the same relation.  They should realize they can’t plot $KE$ first because they don’t know KE as a function of height.    
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+y	&PE (y)	&Etotal	&KE\\5	&50m	&50m	&0\\3	&30m	&50m	&20m\\
+\end{tabular}
+\end{center}
+\label{default}
+
+\DL{} instructor demonstrate how to graph with $Y = 0$ set at 3 m below the floor: First make a sketch with a stick figure illustrating the origin, the floor and the point where the ball is dropped from.  Fill out the following table on the board, and then use the table to plot point-by-point.  Here $m$ = mass of ball.  (Use g = 10 m/s$^{2}$)}	
+\note{}{It is very important that they are able to explain exactly how they drew their graphs. (e.g., “Using the relationship PEg = mgy we determined the value of PEg at two points, and since the relationship is linear we then filled in a straight line,” similarly for the other two energies.)In the whole-class discussion, help students to see that even though the graphs look different, they express the same information.  Getting beyond the surface features of a graph is hard for many of them, but is a very important skill they need to develop.  How the graphs look depends on where y = 0 is set. Don’t let them extend their graphs outside of the 2m range the ball actually fell through!}
+\note{Some things you can ask them:}{Ask for similarities and differences among the graphs.  They should see that $KE$ is identical except for y value range (and always positive) while $PE$ and $E_{total}$l can be positive or negative while also shifting right or left.  Ask students why they have a straight line plotted for KE, when KE is dependent upon velocity squared.  Some groups (those who don’t copy the graph from their block notes) may actually have a curved line, so you may be able to get a debate going.}
 
 For example, you could choose $y = 0$ to be at the floor level, or at \unit[3]{m} below the floor. Since we use $PE_\text{gravity} = mgy$ as our standard expression for gravitational potential energy, the place where $PE_\text{gravity} = 0$ depends on where we put $y = 0$. For any given physical situation you can set $y = 0$ {\em wherever you want}.\\
 	
@@ -56,7 +78,9 @@ For example, you could choose $y = 0$ to be at the floor level, or at \unit[3]{m
 
 \subsection{Using Energy Conservation to Graphically Represent Energy Amounts for a Mass-Spring System}
 \label{SpringMassActivity}
-
+\note{For Activity~\ref{SpringMassActivity}}{
+Similar to above, but everyone should have the origin of the coordinate system at the equilibrium position of the mass-spring system in order for the standard $PE$ expression to be valid: $PE_{MASS-SPRING} = \frac{1}{2} k x^{2}$.  Make sure they can explain how they plotted the $KE$:  point-by-point using $KE = E_{TOTAL}-PE$ 
+}
 \textbf{Situation 2:} A mass hanging on a spring is pulled down and released. In your plot, consider all times between when the mass-spring is released and the first time it is momentarily at rest.\\
 	
 \noindent Repeat \eqref{act2.3.1-2a}, \eqref{act2.3.1-2b}, and \eqref{act2.3.1-2c} from \hyperref[act2.3.1-2]{Part~\ref*{act2.3.1-2}} using Situation~2. The three energy amounts are now plotted as functions of ``distance from equilibrium.'' In this situation, \textbf{everyone} should have $y = 0$ at the same place: The \emph{equilibrium position} of the mass-spring system.

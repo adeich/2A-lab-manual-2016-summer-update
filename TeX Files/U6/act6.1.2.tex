@@ -1,6 +1,8 @@
 \section{Working with Position and Displacement Vectors}
 \label{act6.1.2}
-
+\note{For Activity~\ref{act6.1.2} (\about\unit[60-70]{min})}{\subsection*{Learning Goals:}
+\begin{itemize}\item Practice drawing vectors and adding and subtracting them.\item Understand the difference between distance and displacement.\item Understand the difference between displacement and position vectors and how one arises from the other.\item Understand that the displacement vector does not depend on the choice of coordinate system.  \item Understand the relationship between the displacement vector and the average velocity vector.  
+\end{itemize}}
 \begin{overview}
 
 \textbf{Overview:} Now that we know the basic properties of vectors, let's talk about two similar, yet very different kinds of vectors: \textbf{\emph{position}} and \textbf{\emph{displacement vectors}}.
@@ -12,44 +14,63 @@
 \noindent\textbf{Make sure everyone in your group fully understands the ideas behind each question or part in these activities before going on to the next part.}
 
 \begin{enumerate}
-	\item Make a drawing on the board showing the streets in the central city (this should be a square grid with at least 10 streets going in each direction). Decide as a group how you are going to label the streets and use your labeling system. Make sure your diagram is large enough for everyone in the room to clearly see it.
+	\item Make a drawing on the board showing the streets in the central city (this should be a square grid with at least 10 streets going in each direction). Decide as a group how you are going to label the streets and use your labeling system. Make sure your diagram is large enough for everyone in the room to clearly see it.\label{612,1}
+\note{\ref{612,1}: Keep things moving}{don’t let them waste time doing this}
 
-	\item Near one of the edges of the diagram, label a street corner ``o'' for origin of your coordinate system. Your origin should be different from the origins in other groups' drawings. Sketch a coordinate system so that the $y$-axis points North and the $x$-axis points East.
+	\item Near one of the edges of the diagram, label a street corner ``o'' for origin of your coordinate system. Your origin should be different from the origins in other groups' drawings. Sketch a coordinate system so that the $y$-axis points North and the $x$-axis points East.\label{612,2}
+\note{\ref{612,2}:}{he axes are important because we will talk about components.  Also, we don’t want the students to confuse the “initial position” (position at some time) with the origin (0,0) of a coordinate system.}
 	
 	You start walking somewhere in the city, so choose an intersection near the lower middle part of your diagram, and call that location your ``initial'' position. Draw a position vector on your diagram that shows this initial position. Label this vector ``$\vec{R}_i$.''
 	
 	\begin{enumerate}
-		\item Write $\vec{R}_i$, in terms of its $x$- and $y$-components, as $\left(R_{i,x}, R_{i,y}\right)$. Determine the length of $\vec{R}_i$. What units does it have? How would you describe the direction of the position vector?
+		\item Write $\vec{R}_i$, in terms of its $x$- and $y$-components, as $\left(R_{i,x}, R_{i,y}\right)$. Determine the length of $\vec{R}_i$. What units does it have? How would you describe the direction of the position vector?\label{612,2a}
+\note{\ref{612,2a}: }{One thing the students must realize is that everything they can measure must have units so that they need to decide on an appropriate length unit-the obvious (but not only) choice is the length of one block.  They also get their first look at representing a vector by its components.  This will be very important to them later.}
 
 \WCD
 \vspace{12pt}
 
-		\item Starting from your initial location, imagine walking a distance equal to 4~blocks North and then 1~block West and then 1~block South to a ``final'' location. Show the \emph{position vector}, $\vec{R}_f$, for this new location and write $\vec{R}_f$ in terms of its components as $\left(R_{f,x}, R_{f,y}\right)$.
+		\item Starting from your initial location, imagine walking a distance equal to 4~blocks North and then 1~block West and then 1~block South to a ``final'' location. Show the \emph{position vector}, $\vec{R}_f$, for this new location and write $\vec{R}_f$ in terms of its components as $\left(R_{f,x}, R_{f,y}\right)$.\label{612,2b}
+\note{\ref{612,2b}: }{The reason for walking a jig-jog path is to illustrate the difference between the position vector and the actual path. Bring this up in the \WC{} discussion.  They will probably have to think about what a position vector really is.  It is not the displacement vector!}
 		
-		\item As you might expect, we define the ``change in position'' to be $\Delta \vec{R} = \vec{R}_f - \vec{R}_i$, so that $\vec{R}_i + \Delta \vec{R} = \vec{R}_f$.
-		
+		\item As you might expect, we define the ``change in position'' to be $\Delta \vec{R} = \vec{R}_f - \vec{R}_i$, so that $\vec{R}_i + \Delta \vec{R} = \vec{R}_f$.\label{612,2c}
+\note{\ref{612,2c}: }{They may or may not have been to lecture yet so they won’t necessarily know how to add and subtract vectors and you may want to spend two or three minutes telling them how to do this. Make sure they get the idea that you can slide vectors around, but that the length and direction must be the same.  Make sure each group actually does the vector subtraction on the board and make sure that they each see that the same picture also matches the vector addition equation.  It is also useful for the students to realize that they can think of vector subraction as addition after reversing the direction of the vector being subtracted: $\Delta \vec{R} = \vec{R}_{f}  + (-\vec{R}_{i})$}
+	
 		Using the tail-to-head method shown on Page~38 of the course notes, redraw the vectors $\vec{R}_i$ and $\vec{R}_f$ off to the side of your map. Then show how you can \textbf{graphically obtain} $\Delta \vec{R}$ from $\vec{R}_i$ and $\vec{R}_f$. Make sure you draw these vectors with the same lengths and directions that they have on your map.
 		
 		Using the same picture that you used to show $\Delta \vec{R} = \vec{R}_f - \vec{R}_i$, show that $\vec{R}_i + \Delta \vec{R} = \vec{R}_f$ is also true. Now transfer your $\Delta \vec{R}$ over to your street diagram.
+
+%%%%% I found that if an enumerated list spans a full page, margin notes cannot be put on that page. TO get around this I'm breaking up the list, but I need to hard code the correct list counter to start at for the restarted lists:
+\end{enumerate}
+\end{enumerate}
+\begin{enumerate}\setcounter{enumi}{2}
+\item[] $\;$
+\begin{enumerate}\setcounter{enumii}{4}
+
+		\item In physics, we are interested in describing motion. If you could choose only one vector from $\vec{R}_i$, $\vec{R}_f$, and $\Delta \vec{R}$ to describe your motion, which one would it be? Why? What do either of the other two vectors, by themselves, tell you about your motion?\label{612,2d}
+\note{\ref{612,2d}: }{	``Motion'' is the word we use when the location of something is changing so $\Delta \vec{R}$  is the important vector.  Students should notice that knowing $\vec{R}_{i}$ or $\vec{R}_{f}$ alone will be of no use at all in describing the motion.  Conversely, knowing $\Delta \vec{R}$ alone tells you nothing about where you are.}
 		
-		\item In physics, we are interested in describing motion. If you could choose only one vector from $\vec{R}_i$, $\vec{R}_f$, and $\Delta \vec{R}$ to describe your motion, which one would it be? Why? What do either of the other two vectors, by themselves, tell you about your motion?
-		
-		\item How are the $x$-components of $\vec{R}_i$ and $\vec{R}_f$ related to the $x$-component of $\Delta \vec{R}$? How about the $y$-components?
+		\item How are the $x$-components of $\vec{R}_i$ and $\vec{R}_f$ related to the $x$-component of $\Delta \vec{R}$? How about the $y$-components?\label{612,2e}
+\note{\ref{612,2e}: }{Students should see that the component equations are algebraically the same as the vector eq. }
 
 \WCD
 \vspace{12pt}
 
-		\item Suppose you walked the 4~blocks North and 1~block West and 1~block South in 60~seconds. Draw the \emph{average velocity} vector for this situation. Write this average velocity vector in component form, $\left(v_x , v_y\right)$. What is the ``length'' of this vector? Include the units. Draw another velocity vector for a situation where you took 180~seconds for this 6~block walk. Which arrow is longer? Why?
+		\item Suppose you walked the 4~blocks North and 1~block West and 1~block South in 60~seconds. Draw the \emph{average velocity} vector for this situation. Write this average velocity vector in component form, $\left(v_x , v_y\right)$. What is the ``length'' of this vector? Include the units. Draw another velocity vector for a situation where you took 180~seconds for this 6~block walk. Which arrow is longer? Why?\label{612,2f}
+\note{\ref{612,2f}: }{Longer time taken to travel same distance means smaller vector v.  It will be hard for them to realize that the vector’s length now represents speed.}
 		
-		\item In which direction(s) would your \emph{instantaneous velocity} be?
+		\item In which direction(s) would your \emph{instantaneous velocity} be?\label{612,2g}
+\note{\ref{612,2g}: }{It shouldn’t be too hard for them to realize that their instantaneous velocity points the way that they are currently traveling (first North, then West, then South). }
 		
-		\item If you now walked back to your initial point and assuming the total journey took eight hours what is your average velocity for the entire trip?
+		\item If you now walked back to your initial point and assuming the total journey took eight hours what is your average velocity for the entire trip?\label{612,2h}
+\note{\ref{612,2h}: }{This should generate a good discussion on the ideas of distance, displacement, and average velocity.  What is the value of each from the beginning of a basketball game till the end?  }
 	\end{enumerate}
 
 \WCD
 \vspace{12pt}
 
-	\item Look around the room at the different street diagrams. What is similar in each one? What is different? Discuss in your group how you would summarize the meaning of everything you did in this activity. Be prepared to share with the whole class.
+	\item Look around the room at the different street diagrams. What is similar in each one? What is different? Discuss in your group how you would summarize the meaning of everything you did in this activity. Be prepared to share with the whole class.\label{612,3}
+\note{\ref{612,3}: }{Ask the class what is the same and different between the groups.  $\Delta \vec{R}$  is the same in terms of block size.  All vertical and three blocks long.  Each group also has the same velocity vectors (although they may not all be drawn to the same scale).  Everything else is different.  Ask for a volunteer to explain what fundamentals they learned.  Ask ‘em!  They should say something like; what a position vector is, what a displacement vector is, how to add and subtract vectors. }
 \end{enumerate}
+\note{EXTRA QUESTION:}{If a group finishes early, ask them to repeat steps a through c with a different origin.  Use this work in the whole class discussion to highlight the path independence of the displacement}
  
 
