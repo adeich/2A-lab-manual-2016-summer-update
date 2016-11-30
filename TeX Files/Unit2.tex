@@ -4,9 +4,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter[\chaptername\thechapter]{\chapterlongname \thechapter}
-\label{dlm5b}
-\addchapter
+\mychapter{dlm5b}
 
 %	\input{U1/act1.2.3}
 %	\newpage
@@ -21,9 +19,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter[\chaptername\thechapter]{\chapterlongname \thechapter}
-\label{dlm6}
-\addchapter
+\mychapter{dlm6}
 
 	\input{U2/act2.1.3}
 	\newpage
@@ -38,15 +34,17 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\renewcommand*\thesection{\thechapter}	%There's only one activity in this DL, so this will remove the letter from the activity number
+\interlude{
+	\input{U2/dlm7aoverview}
+}
 
-\chapter[\chaptername\thechapter]{\chapterlongname \thechapter}
-\label{dlm7a}
-\addchapter
+%commentedchapterlabel\renewcommand*\thesection{\thechapter}	%There's only one activity in this DL, so this will remove the letter from the activity number
+
+\mychapter{dlm7a}
 
 	\input{U2/act2.2.2}
 
-\renewcommand*\thesection{\thechapter\,\Alph{section}}	%Here, we're turning the lettering in activity numbers back on
+%commentedchapterlabel\renewcommand*\thesection{\thechapter\,\Alph{section}}	%Here, we're turning the lettering in activity numbers back on
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -54,9 +52,10 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter[\chaptername\thechapter]{\chapterlongname \thechapter}
-\label{dlm7b}
-\addchapter
+\interlude{
+	\input{U2/dlm7boverview}
+}
+\mychapter{dlm7b}
 
 	\input{U2/act2.3.1}
 	\newpage
@@ -69,12 +68,15 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter[\chaptername\thechapter]{\chapterlongname \thechapter}
-\label{dlm8}
-\addchapter
+\interlude{
+	\input{U2/dlm8overview}
+}
+\mychapter{dlm8}
 
 	\input{U2/act2.3.2}
 	\newpage
 	\input{U2/act2.4.1}
+	\newpage
+	\input{U2/act2.4.2}
 	\newpage
 	\input{U2/act2.4.3}
