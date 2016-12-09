@@ -1,4 +1,22 @@
-% edit configuration.tex to set thes toggles that affect the format of the compiled document
+%%%%%%%%%%%%%    compiling instuctions  %%%%%%%%%%%%%
+%	When printing set \toggletrue{print} when creating a digital version use \togglefalse{print}
+% 	To print a student version set 
+%		\togglefalse{instructor}
+%		\togglefalse{student_and_instructor_on_separate_pages}
+%	To print an instructor version with student pages and instructor notes on the same page (or a digital instructor version) use
+%		\toggletrue{instructor}
+%		\togglefalse{student_and_instructor_on_separate_pages}
+%	To print an instructor version with even pages being the student notes and the odd pages being the instructor notes
+%	 first do
+%		\toggletrue{instructor}
+%		\toggletrue{student_and_instructor_on_separate_pages}
+%		and rename the output pdf to side2.pdf
+%	then do
+%		\togglefalse{instructor}
+%		\toggletrue{student_and_instructor_on_separate_pages}
+%		and rename the output pdf to side1.pdf
+% then on automator (in Mac OS) create a new workflow,  put in ``get selected finder items'' followed by ``combine PDFs'', select ``Shuffling pages'', followed by ``open finder items''
+% select instructor.pdf and student.pdf in the finder and run the workflow, save the resulting PDF.  You will need to add a blank page to the start to get it to print properly with the student side on the left and the instructor side on the right when opened in a book, so when it opens in preview open the thumbnail window (command-option-2)  then command click on a blank page and drag it (duplicate it) to the top above the first page.  Save this file and print it out, then photocopy it doublesided.
 
 \documentclass[12pt,onecolumn,letterpaper]{book}
 %\documentclass[12pt,onecolumn,letterpaper,oneside]{book}
@@ -48,14 +66,26 @@
 
 \usetikzlibrary{arrows.meta,calc,decorations.markings,math,arrows.meta,backgrounds,positioning,pgfplots.groupplots} % Allows for some more formatting in tikz pictures
 
-% edit configuration.tex to set these toggles
 \newtoggle{instructor}
-\newtoggle{student_and_instructor_on_separate_pages} % when used in conjunction with \toggletrue{instructor} it will zoom the page to show only the instructor notes
-\newtoggle{print}	% If True, hides color in hyperlinks and boxes
-\newtoggle{breakintochapters}
-\newtoggle{draft} % when in draft mode AND instructor mode it prints todo list
+	\toggletrue{instructor}
+%	\togglefalse{instructor}
 
-\input{configuration}
+\newtoggle{student_and_instructor_on_separate_pages} % when used in conjunction with \toggletrue{instructor} it will zoom the page to show only the instructor notes
+	\toggletrue{student_and_instructor_on_separate_pages}
+%	\togglefalse{student_and_instructor_on_separate_pages}
+
+\newtoggle{print}	% If True, hides color in hyperlinks and boxes
+	\toggletrue{print}
+%	\togglefalse{print}
+
+\newtoggle{breakintochapters}
+%	\toggletrue{breakintochapters}
+	\togglefalse{breakintochapters}
+
+\newtoggle{draft} % when in draft mode AND instructor mode it prints todo list
+%	\toggletrue{draft}
+	\togglefalse{draft}
+
 
 \iftoggle{instructor}
 	{\iftoggle{draft}{
@@ -139,8 +169,9 @@
 \addtocontents{toc}{\protect{\pdfbookmark[0]{Table of Contents}{toc}}}
 % Numbering depth of ToC
 \iftoggle{instructor}
-	{\setcounter{tocdepth}{3}}	% Set to 3 for Teacher's Edition
-	{\iftoggle{student_and_instructor_on_separate_pages}{\setcounter{tocdepth}{3}}{\setcounter{tocdepth}{1}}}	% Set to 0 or 1 for Student Edition unless it is the student side of instructor edition
+	%{\setcounter{tocdepth}{3}}	% Set to 3 for Teacher's Edition
+	{\setcounter{tocdepth}{1}}	% Set to 3 for Teacher's Edition
+	{\setcounter{tocdepth}{1}}	% Set to 0 or 1 for Student Edition
 % Numbering depth of sections in body of text
 \setcounter{secnumdepth}{3}
 % Remove leading Chapter Numbers from ToC
@@ -217,20 +248,26 @@
 	{notes}
 
 
-
 \newcommand{\mymarginpar}[1]{%
-	\iftoggle{instructor}{ 
-
-                         \ifodd\value{page}%
-                            \normalmarginpar%
-                            \marginpar[left]{\scriptsize #1}%
-                          \else%
-                          \reversemarginpar
-                            \marginpar[left]{\scriptsize #1}%
-                          \fi
-	}{}
+\iftoggle{student_and_instructor_on_separate_pages}{
+\iftoggle{instructor}{  \ifodd\value{page}%
+    \normalmarginpar%
+    \marginpar[left]{\scriptsize #1}%
+  \else%
+  \reversemarginpar
+    \marginpar[left]{\scriptsize #1}%
+  \fi}{}
+}{
+  \ifodd\value{page}%
+    \normalmarginpar%
+    \marginpar[left]{\scriptsize #1}%
+  \else%
+  \reversemarginpar
+    \marginpar[left]{\scriptsize #1}%
+  \fi%
 }
 
+}
 
 
 %create a new chapter
@@ -261,11 +298,12 @@
 %\newcounter{FNT}[subsection]	% FNT counter resets every subsection
 %\newlistof{FNTs}{fntlist}{List of \FNTs}
 \newmdenv[						
+	linewidth=\iftoggle{student_and_instructor_on_separate_pages}{0pt,}{1.5pt,}
 	roundcorner=10pt,
 	backgroundcolor=\iftoggle{print}{\iftoggle{student_and_instructor_on_separate_pages}{white}{black!7}}{yellow!5},
+%	backgroundcolor=\iftoggle{print}{black!7}{yellow!5},
 	frametitle={\thefnt},
 	frametitlerule=false,
-	linewidth=\iftoggle{student_and_instructor_on_separate_pages}{\iftoggle{instructor}{0pt,}{1.5pt,}}{1.5pt,}
 	]
 	{fntbox}
 \newenvironment{FNTenv}
@@ -273,7 +311,7 @@
 		\refstepcounter{FNT}	% Increment FNT counter
 		\addcontentsline{toc}{subsection}{\thefnt}	% Append to ToC
 		\addcontentsline{fntlist}{section}{\thefnt}	% Append to FNTlist
-		\iftoggle{student_and_instructor_on_separate_pages}{\iftoggle{instructor}{\color{white}}{}}{}	
+		\iftoggle{student_and_instructor_on_separate_pages}{\color{white}}{}	
 	}
 	{\end{fntbox}}
 % Macro for current FNT
@@ -295,11 +333,11 @@
 	
 % Boxed Answers environment
 \newmdenv[						
+	linewidth=\iftoggle{student_and_instructor_on_separate_pages}{0pt,}{1.5pt,}
 	roundcorner=10pt,
 	backgroundcolor=white,
 	frametitle={Possible Answers},
 	frametitlerule=false,
-	linewidth=\iftoggle{student_and_instructor_on_separate_pages}{\iftoggle{instructor}{0pt,}{1.5pt,}}{1.5pt,}
 	]
 	{ans}
 
@@ -308,25 +346,25 @@
 	
 % Background Reading environment
 \newmdenv[						
+	linewidth=\iftoggle{student_and_instructor_on_separate_pages}{0pt,}{1.5pt,}
 	roundcorner=10pt,
 	backgroundcolor=\iftoggle{print}{\iftoggle{student_and_instructor_on_separate_pages}{white}{ black!3}}{orange!5},
 	frametitle={Please read before moving on:},
 	frametitlerule=false,
-	linewidth=\iftoggle{student_and_instructor_on_separate_pages}{\iftoggle{instructor}{0pt,}{1.5pt,}}{1.5pt,}
 	]
 	{reading}
 
 
 % Generic framed section-beginning/overview environment, same style as "Reading"
 \newmdenv[						
+	linewidth=\iftoggle{student_and_instructor_on_separate_pages}{0pt,}{1.5pt,}
 	roundcorner=10pt,
 	innertopmargin=15pt,
 	innerbottommargin=15pt,
 	innerleftmargin=15pt,
 	innerrightmargin=15pt,
-	frametitlerule=false,
 	backgroundcolor=\iftoggle{print}{\iftoggle{student_and_instructor_on_separate_pages}{white}{ black!3}}{green!5},
-	linewidth=\iftoggle{student_and_instructor_on_separate_pages}{\iftoggle{instructor}{0pt,}{1.5pt,}}{1.5pt,}
+	frametitlerule=false,
 	]
 	{overview}
 
@@ -374,7 +412,7 @@
 		}
 		{
 		\iftoggle{student_and_instructor_on_separate_pages}{
-			\color{white}\begin{myinterlude} \begin{notes} #1\end{notes} \end{myinterlude}\color{black}
+			\color{white}\begin{myinterlude} \begin{notes} #1\end{notes} \end{myinterlude}
 		}
 		}
 	}
@@ -399,20 +437,10 @@
 \newcommand{\SGs}{small groups}	
 
   
-\title{{\bf Physics 2A Lab Manual} \\
+\title{{\bf Physics 2A Lab Manual}
 \iftoggle{instructor}
-	{\iftoggle{student_and_instructor_on_separate_pages}{ 
-		 {\Large Instructor Edition}
-		}{
-		 {\Large Instructor Edition}
-		}
-	}
-	{
-	\iftoggle{student_and_instructor_on_separate_pages}{ 
-			{\Large  Instructor Edition}
-		}{
-			\Large Student Edition}
-		}
+	{\\ {\Large Instructor Edition}}
+	{\\ {\Large Student Edition}}
 }
 \author{San Jos\'{e} State University}
 \date{Spring 2017}
@@ -420,17 +448,17 @@
 \includeonly{
 Unit0,
 Unit1, 
-Unit2,
-Unit6,
-Unit7,
-Unit8,
-models/threephase,
-models/energyinteraction,
-models/totalenergy,
-models/linearmomentum,
-models/newtonianforce,
-DavisNumbering,
-ActivityBook,
+%Unit2,
+%Unit6,
+%Unit7,
+%Unit8,
+%models/threephase,
+%models/energyinteraction,
+%models/totalenergy,
+%models/linearmomentum,
+%models/newtonianforce,
+%DavisNumbering,
+%ActivityBook,
 }
 
 \begin{document}
