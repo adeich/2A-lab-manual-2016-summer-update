@@ -1,6 +1,15 @@
 \section{Newton's Laws and Momentum Conservation}
 \label{act8.1.1}
-
+\note{For Activity~\ref{act8.1.1} (\about\unit[65]{min})
+}{
+\subsection*{Learning Goals:}
+\begin{itemize}
+\item Develop understanding of the differences between a Newtonian 2nd law approach and a momentum conservation approach and how these relate to energy conservation
+\item Get practice figuring out which model/approach can be used to answer particular questions about various phenomena
+\item Review Newton’s 1st and 3rd laws
+\item Develop understanding of the steps used in the Newtonian 2nd law approach
+\end{itemize}
+}
 \begin{overview}
 
 	\textbf{Overview:} Over the past few weeks, we've dealt a lot with forces, and we know much more about motion in general. We even know that forces cause changes in motion. Sir Isaac Newton, a physicist of the 17th/18th century, formulated three famous laws that powerfully express the relationship between forces and motion. In this next section, we'll discuss these so-called \emph{Newton's Laws}.
@@ -9,9 +18,9 @@
 
 \subsection{Getting started with Newton's Laws}
 
-\begin{fnt}
+\begin{FNTenv}
 	\input{U8/fnt8.1.0-1}
-\end{fnt}
+\end{FNTenv}
 
 \WCD
 
@@ -40,9 +49,10 @@
 \end{reading}
 
 \begin{enumerate}
-	\item Come up with a physical scenario that illustrates each of Newton's three laws. Describe each law in both sentence form and with a concise mathematical expression, specific to your example. Be careful and precise with notation in the algebraic expressions.
-	
-	\item 
+	\item \label{811,1} Come up with a physical scenario that illustrates each of Newton's three laws. Describe each law in both sentence form and with a concise mathematical expression, specific to your example. Be careful and precise with notation in the algebraic expressions.
+\note{\ref{811,1}}{Encourage the students to create and not regurgitate, but be careful with wasting time.  Allot about ten minutes.}	
+\filbreak
+	\item \label{811,2}
 	  % We have to create a parbox here because wrapfigure does not support enumerate environments directly
 	  \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
       \vspace{-3mm}
@@ -56,14 +66,17 @@
 			\end{tikzpicture}
 	  \end{wrapfigure}
       Make a \forcediag{} for each object in each of the following situations. For each situation, circle and connect the forces that are in tandem as third law pairs, as shown.
+ 
       }
-	
+      \note{\ref{811,2}}{We want them to identify Newton’s 3rd law in momentum conservation.  Equal impulses in opposite directions should be in their charts and the impulse equation $\vec{F}_{net}\Delta t = \Delta \vec{p}$ should be on their boards.  Additionally, objects having a constant momentum do not have a net force.  They must understand that force is not needed for constant motion.  Throughout the 7 series many students are not careful distinguishing between the quantity and the change in the quantity.}
+           	
 	\begin{enumerate}
 		\item Refer to the %rocket example of \ref{fnt7.1.1-2}.
-		astronaut example from \ref{14C.1}. 
+		astronaut example from \hyperref[14C.1]{Activity~\ref{14C.1}} on page~\pageref{14C.1}. 
 		Recreate a \pchart{} and follow the instructions for the force diagram above. Explain how each of Newton's Laws can be identified in the \pcharts{} and \forcediags{}. Suppose we wanted the rocket to move at a constant speed, is a net force necessary to make this happen?
 		
-		\item Refer to the boat example of \ref{fnt7.1.1-3}. Recreate a \pchart{} and follow the instructions for the force diagram above. Explain how each of Newton's Laws can be identified in the \pcharts{} and \forcediags{}.
+		\item Refer to the boat example of \hyperref[fnt7.1.1-3]{Assignment~\ref{dlm11}-\ref{fnt7.1.1-3}}
+		on page \pageref{fnt7.1.1-3}. Recreate a \pchart{} and follow the instructions for the force diagram above. Explain how each of Newton's Laws can be identified in the \pcharts{} and \forcediags{}.
 	\end{enumerate}
 \end{enumerate}
 
@@ -74,7 +87,17 @@
 \subsubsection*{\emph{Static} Case: All objects sitting still}
 
 \begin{enumerate}
-	\item Refer to the picture below of three books sitting on a table that is standing on a floor. Make a separate \forcediag{} for each of the four objects: Books~A, B, and C, and the table. The masses of the books are \unit[0.8]{kg}, \unit[0.2]{kg}, and \unit[0.5]{kg} for Books~A, B, and C, respectively and the mass of the table is \unit[30]{kg}.
+	\item \label{811A,1}Refer to the picture below of three books sitting on a table that is standing on a floor. Make a separate \forcediag{} for each of the four objects: Books~A, B, and C, and the table. The masses of the books are \unit[0.8]{kg}, \unit[0.2]{kg}, and \unit[0.5]{kg} for Books~A, B, and C, respectively and the mass of the table is \unit[30]{kg}
+	\note{For~\ref{811A,1}}{The students may need to be reminded that the $F_{Earth on object}$ is always equal to $mg$ (when the object is near the earth).  Without telling them answers you could help by asking whether the forces in the y-direction are balanced.
+\\[0.25in]
+The main thing that they should understand is that unbalanced force diagrams describe a change in motion so only in part~\ref{811A,5} will the net force on any object will be non-zero and in part~\ref{811A,5}  all net forces will be non-zero (here you can remind them that it is an object’s mass that determines what force is necessary to yield a given acceleration). 
+\\[0.25in]
+Only the net force equals mass times acceleration.
+\\[0.25in]
+Their force diagrams should be properly labeled (always give both objects when naming a force) as $F_{A on B}$ and scaled properly (so the net force should always be proportional to the mass for all objects with the same acceleration).  
+\\[0.25in]
+The students should write Newton’s 2nd Law expression, $F_{net}= m a$, for each object separately!  Example:  net force on book C = m$_C$a.
+}.
 	
 	\begin{center}
 	\begin{tikzpicture}{c}{1}
@@ -95,18 +118,18 @@
 	\end{tikzpicture}
 	\end{center}
 	
-	\item Identify all 3rd law pairs of forces appearing in your \forcediags{} by circling the two forces and connecting as shown in the diagram on the previous page.
+	\item \label{811A,2}Identify all 3rd law pairs of forces appearing in your \forcediags{} by circling the two forces and connecting as shown in the diagram on the previous page.
 	
-	\item Use Newton's 1st and 3rd laws to numerically determine all of the forces acting on the books and the table. If necessary, redraw your \forcediags{} so they are more to scale.
+	\item \label{811A,3}Use Newton's 1st and 3rd laws to numerically determine all of the forces acting on the books and the table. If necessary, redraw your \forcediags{} so they are more to scale.
 \end{enumerate}
 
 \subsubsection*{\emph{Dynamic} Cases: Objects moving horizontally and vertically}
 
 \begin{enumerate}
 	  \setcounter{enumi}{3}
-	\item If the books and table together are sliding across the room each at the same constant speed, how would your \forcediags{} change? Show precisely how it would change or explain why it would not.
-	
-	\item Now imagine the table is sitting in an elevator that begins to accelerate upward with an acceleration equal to $\unitfrac[2]{m}{s^2}$.
+	\item \label{811A,4}If the books and table together are sliding across the room each at the same constant speed, how would your \forcediags{} change? Show precisely how it would change or explain why it would not.
+\note{For \ref{811A,4}}{$F_{B on C }= +5$ N\\		$F_{A on B} = +7$ N\\		$F_{Table on A} = +15$ N\\	      $F_{Floor on table} = +315$ N.}	
+	\item \label{811A,5}Now imagine the table is sitting in an elevator that begins to accelerate upward with an acceleration equal to $\unitfrac[2]{m}{s^2}$.
 	\begin{enumerate}
 		\item Make a new \forcediag{} for each book and determine the forces acting on it.
 		\item Create a \pchart{} for at least two of the objects.
@@ -114,15 +137,19 @@
 		\item Is it correct to say a force always equals $m\vec{a}$~?
 		\item Is it correct to say that, whenever the net force is zero, the velocity must also be zero?
 	\end{enumerate}
+\note{For \ref{811A,5}}{
+Since there must be a net force pointing up (in +y direction) all forces above must increase; get them to realize this first--have them look at their original force diagrams and ask about net force.  They need to know $F_{E on objects}$ remains same, so tell them.
+\\[0.25in]
+$F_{B on C }= +6$ N\\		$F_{A on B} = +8.4$ N\\		$F_{Table on A} = +18$ N\\	      $F_{Floor on table} = +378$ N.}	
 \end{enumerate}
 
 \WCD
 
 \subsection{Applications of Newton's Laws}
 
-\begin{fnt}
+\begin{FNTenv}
 	\input{U8/fnt8.1.1-2}
-\end{fnt}
+\end{FNTenv}
 
 \vspace{-6pt}
 \WCD

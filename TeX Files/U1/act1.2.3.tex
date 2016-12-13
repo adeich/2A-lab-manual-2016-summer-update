@@ -1,6 +1,7 @@
 %\section{Manipulating the Interval}
 
 %Changing this to just be the ice-tea activity
+\note{Timing: \unit[\about35]{min}}{}
 \section{Defining Appropriate Intervals for Analysis}
 \label{act1.2.3}
 
@@ -10,12 +11,12 @@
 
 \end{overview}
 
-% We already did this activity and FNT in D/L 4. Commenting this out here.
+% We already did this activity and \FNT{} in D/L 4. Commenting this out here.
 %\subsection{}
 %
-%\begin{fnt}
-%	\input{U1/fnt1.2.1-4}
-%\end{fnt}
+%\begin{FNTenv}
+%	\input{U1/FNT1.2.1-4}
+%\end{FNTenv}
 
 %\note{Timing: \unit[\about10]{min}}{
 	
@@ -36,12 +37,24 @@
 
 \noindent\textbf{Consider the following phenomenon:} A \textbf{big} chunk of ice (water) at an initial temperature of  \unit[-65]{\textdegree C} is placed inside a well-insulated container with some tea at an initial temperature of \unit[20]{\textdegree C}, and the two are allowed to come to thermal equilibrium. (The tea can be treated as water with respect to thermal properties.)
 
+
+
 \begin{enumerate}
 	\item There are several possible final states of this process. We will be using and reusing the same \ThreePhaseModel{} to determine possible final states. Draw two \TempGraphs{}, one for tea and one for \ce{H2O}.
 	\begin{enumerate}
 		\item Why can't either substance reach thermal equilibrium in the gaseous phase nor the mixed (liquid/gas) phase nor the gaseous phase?
+		\label{act123a}
 		\item Using the \hyperref[act123-grid]{grid below}, your instructor will assign your group one of the potentially possible final states. Trace your \TempGraph{} to show how your assigned ending phase is or is not possible.
 		\label{act123-gridprob}
+		\note{Create energy interaction diagramsfor \ref{act123a}}{
+State 1: A LOT of ice would make this state possible b/c the tea would be cooled to a solid. A LOT of tea would make this state unlikely to happen b/c the tea’s final state is a solid in this instance and a little ice would not be cold enough to make the tea a solid
+\\[0.25in]
+State 2: A LOT of ice would make this state possible b/c the tea would be cooled enough to go through a phase change. However, a LOT of tea would make this state unlikely for the reason state above.
+\\[0.25in]
+State 3: A LOT of ice or a LOT of tea would make this state unlikely b/c it takes an exact amount of ice and tea to ensure the ice and tea lose transfer the same amount of thermal energy. 
+\\[0.25in]
+State 6 an 9: A LOT of ice would make this state unlikely b/c now the opposite is happening, we need the ice to go through a phase change and having a lot of ice would require a LOT of energy to do so. A LOT of tea would make this state likely b/c you would have enough tea for the little bit of ice to go through a phase change.
+		}
 	\end{enumerate}
 
 \newcommand{\gridsize}{3cm}
@@ -68,7 +81,29 @@
 							&  						& \multicolumn{1}{|c|}{} 			& \multicolumn{1}{|c|}{}	& \multicolumn{1}{|c|}{} \\\cline{3-5}
 	\end{tabular} 
 \end{table}
+\note{Grid solution for \ref{act123-gridprob}}{
+\begin{center}
+\begin{tabular}{c|c|c|c|}
+ ICE \textbackslash Tea& Solid & Mixed & Liquid \\
+ \hline
+ Solid & i. Many possible temperatures & Many possible phases & Exactly one temp \& phase \\
+ \hline
+ Mixed & iv. No (can't cross) & v. No (see below) & vi. Many possible phases  \\
+ \hline
+ Liquid & vii. No (can't cross) & vii. No (can't cross) & viii. Many possible temperatures  \\
+ \hline
+\end{tabular}
+\end{center}
+\label{default}
+By ``Can’t cross'' I mean that the final states of the ice and tea actually cross one another on the three phase diagram. This isn’t possible because the energy transfer will stop once the ice and the tea reach the same temperature.
+\\[0.25in]
+Final State v. Similarly, this state isn’t possible because if one substance is in the mixed S/L phase, then the other substance will stop at the corner once it reaches the melting point because the ice and the tea are at thermal equilibrium.
 
+%	\begin{center}
+%		\label{teaandicechart}
+%		\includegraphics[width=.6\textwidth]{act123.png}
+%	\end{center}
+}
 
 \WCD
 
@@ -82,7 +117,9 @@
 	\end{enumerate}
 
 	\bitem{Thinking about how to proceed:  How do we determine the final state?}
-	
+\note{}{
+\textbf{Tell students the mass of the ice is 0.5 kg and the tea is 3.0 kg}
+}	
 	Put a \TempGraph{} on the board for each of the two systems: The water that starts out as ice at \unit[-65]{\textdegree C} and the tea (liquid water) that starts out at \unit[20]{\textdegree C}. Put a big dot on each graph at the initial state.
 	
 	\begin{enumerate}
@@ -95,8 +132,11 @@
 
 \WCD 
 
+		\note{}{
+		No, it is not possible to determine the final state of the substances because we don’t know how much of each substance we have. Yes it is possible to eliminate some states: state 4, 5, 7, and 8 for the reasons listed in the chart. 
+}	
 		\item Is it possible to determine the final state of the substances yet?  Is it possible to eliminate any of the possible final states? Which one(s)?
-		
+
 		\item We now need to repeat \hyperref[act123-compare-energies]{Part~\ref*{act123-compare-energies}} to figure out which happens first: the tea decreases to \unit[0]{\textdegree C},  or the ice goes through an entire phase change. Draw {\em NEW initial points} and determine which changes in energy you need to compare. Then draw the \EnergyDiagrams, and do the calculations.
 		
 		\item Are the two physical systems in thermal equilibrium at the end of this step?  How do you know this?

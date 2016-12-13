@@ -1,0 +1,54 @@
+%%%%%%%%%%%%%    compiling instuctions  %%%%%%%%%%%%%
+%	To print an instructor version with even pages being the student notes and the odd pages being the instructor notes
+%	 first do
+%		\toggletrue{instructor}
+%		\toggletrue{student_and_instructor_on_separate_pages}
+%		and rename the output pdf to instructor.pdf
+%	then do
+%		\togglefalse{instructor}
+%		\toggletrue{student_and_instructor_on_separate_pages}
+%		and rename the output pdf to student.pdf
+% then on automator (in Mac OS) create a new workflow,  put in ``get selected finder items'' followed by ``combine PDFs'', select ``Shuffling pages'', followed by ``open finder items''
+% select instructor.pdf and student.pdf in the finder and run the workflow, save the resulting PDF.  You will need to add a blank page to the start to get it to print student and instructor pages  so they can both be seen when the book is opened, so when it opens in preview open the thumbnail window (command-option-2)  then command click on a blank page and drag it (duplicate it) to the top above the first page.  Save this file and print it out, then photocopy it doublesided.
+%
+% there are five toggles that need to be set: 
+%	print will render graphics in greyscale when set to true
+%	draft will include to-do notes when set to true
+%	instructor will print the instructor notes
+%	student_and_instructor_on_separate_pages will let the manual and the instructor notes be printed on separate pages so they are big enough to read when printed out
+% 	breakintochapters will  group activities based on the discussion lab meeting we think they will be performed in
+
+%%%% common settings for all versions %%%%%
+	\togglefalse{draft}	
+	\togglefalse{breakintochapters}	
+		
+%%%%  For a digital instructors manual %%%%%
+	\togglefalse{print}	
+	\toggletrue{instructor}
+	\togglefalse{student_and_instructor_on_separate_pages}
+
+%%%%  For a printed instructors manual - even pages (the main manual part) %%%%%
+	\toggletrue{print}	
+	\togglefalse{instructor}
+	\toggletrue{student_and_instructor_on_separate_pages}
+
+%%%%  For a printed instructors manual - odd pages (instructor notes part) %%%%%
+	\toggletrue{print}	
+	\toggletrue{instructor}
+	\toggletrue{student_and_instructor_on_separate_pages}
+
+%%%%  For a printed student manual %%%%%
+	\toggletrue{print}	
+	\togglefalse{instructor}
+	\togglefalse{student_and_instructor_on_separate_pages}
+
+%%%%  For a digital student manual %%%%%
+	\togglefalse{print}	
+	\togglefalse{instructor}
+	\togglefalse{student_and_instructor_on_separate_pages}
+
+
+%%%% COPY THE CONFIGURATION YOU WANT BELOW THIS LINE %%%%%%%%%%
+	\togglefalse{print}	
+	\togglefalse{instructor}
+	\toggletrue{student_and_instructor_on_separate_pages}
